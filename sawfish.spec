@@ -70,11 +70,11 @@ control-center oraz wm-entries spec.
 %setup -q -n %{name}-%{dsnap}
 
 %build
-#gettextize --copy --force
-#libtoolize --copy --force
-#aclocal
-#%{__autoconf}
-#automake -a -c || :
+%{__gettextize}
+%{__libtoolize}
+aclocal
+%{__autoconf}
+%{__automake} || :
 %configure \
 	--disable-static \
 	--enable-capplet \
