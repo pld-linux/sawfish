@@ -1,0 +1,19 @@
+--- sawfish-1.0.1/configure.in.wiget	Tue Apr 16 12:01:42 2002
++++ sawfish-1.0.1/configure.in	Tue Apr 16 12:02:59 2002
+@@ -280,7 +280,7 @@
+       AC_DEFINE(LIBC_MALLOC)
+       ;;
+     *)
+-      LIBOBJS="${LIBOBJS} dlmalloc.o"
++      AC_LIBOBJ([dlmalloc])
+       AC_DEFINE(DOUG_LEA_MALLOC)
+       ;;
+   esac
+@@ -368,7 +368,6 @@
+ AC_SUBST(lispdir)
+ AC_SUBST(localedir)
+ AC_SUBST(HAVE_X11)
+-AC_SUBST(LIBOBJS)
+ AC_SUBST(CPPFLAGS)
+ AC_SUBST(CFLAGS)
+ AC_SUBST(LIBS)
