@@ -165,7 +165,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libexecdir}/sawfish/%{version}
 %dir %{_libexecdir}/sawfish/%{version}/%{_host}
 %attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/*.so
-%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/*.la
+%{_libexecdir}/sawfish/%{version}/%{_host}/*.la
 %attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/gtk-style
 %attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish-menu
 %attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish-about
@@ -173,12 +173,12 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish/wm
 %dir %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish/wm/util
 %attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish/wm/util/*.so
-%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish/wm/util/*.la
+%{_libexecdir}/sawfish/%{version}/%{_host}/sawfish/wm/util/*.la
 %{_libexecdir}/sawfish/%{version}/%{_host}/DOC
 
 %dir %{repexecdir}/sawfish
 %attr(755,root,root) %{repexecdir}/sawfish/*.so
-%attr(755,root,root) %{repexecdir}/sawfish/*.la
+%{repexecdir}/sawfish/*.la
 %{_infodir}/sawfish*
 
 %files gnome
