@@ -13,6 +13,7 @@ Patch1:		%{name}-xinerama.patch
 Patch2:		%{name}-no_version.patch
 URL:		http://sawmill.sourceforge.net
 Requires:	librep-jl
+Requires:	rep-gtk
 BuildRequires:	esound-devel
 BuildRequires:	control-center-devel
 BuildRequires:	gettext-devel
