@@ -1,6 +1,6 @@
 Summary:	A highly configurable and extensible X11 window manager
 Name:		sawfish
-Version:	0.36
+Version:	0.37.1
 Release:	1
 Epoch:		1
 License:	GPL
@@ -9,7 +9,7 @@ Group(de):	X11/Fenstermanager
 Group(es):	X11/Administraadores De Ventanas
 Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
-Source0:	ftp://download.sourceforge.net/pub/sourceforge/sawmill/%{name}-%{version}.tar.gz
+Source0:	ftp://sawmill.sourceforge.net/pub/sawmill/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-no_version.patch
 Patch2:		%{name}-no_libnsl.spec
