@@ -1,3 +1,5 @@
+%define		snap 20030126
+
 Summary:	A highly configurable and extensible X11 window manager
 Summary(es):	Un administrador de ventanas que se puede configurar y extender para X11
 Summary(pl):	Zarz±dca okien dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
@@ -7,12 +9,13 @@ Summary(uk):	÷¦ËÏÎÎÉÊ ÍÅÎÅÄÖÅÒ ÄÌÑ X Window
 Summary(zh_CN):	¾ßÓĞºÜÇ¿µÄÀ©Õ¹ĞÔºÍ¿ÉÅäÖÃĞÔµÄÍ¼ĞÎ´°¿Ú¹ÜÀíÆ÷
 Name:		sawfish
 Version:	1.2
-Release:	2
+Release:	3.%{snap}.1
 Epoch:		3
 License:	GPL
 Group:		X11/Window Managers
 #Source0:	http://ftp.gnome.org/pub/gnome/sources/sawfish/2.0/%{name}-%{version}.tar.bz2
-Source0:	http://unc.dl.sourceforge.net/sourceforge/sawmill/%{name}-%{version}-gtk2.tar.gz
+#Source0:	http://unc.dl.sourceforge.net/sourceforge/sawmill/%{name}-%{version}-gtk2.tar.gz
+Source0:	%{name}-%{version}-%{snap}.tar.bz2
 Patch0:		%{name}-applnk.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
@@ -111,7 +114,7 @@ control-center oraz specyfikacjê wm-entries.
 ĞÁËÅÔ.
 
 %prep
-%setup -q -n %{name}-%{version}-gtk2
+%setup -q
 %patch0 -p1
 
 %build
