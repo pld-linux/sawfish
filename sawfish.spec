@@ -4,6 +4,7 @@ Version:	0.32
 Release:	1
 License:	GPL
 Group:		X11/Window Managers
+Group(de):	X11/Fenstermanager
 Group(es):	X11/Administraadores De Ventanas
 Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
@@ -49,6 +50,7 @@ interface; sawmill is mostly-GNOME compliant.
 %package gnome
 Summary:	GNOME support for sawmill
 Group:		X11/Window Managers
+Group(de):	X11/Fenstermanager
 Group(es):	X11/Administraadores De Ventanas
 Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
@@ -61,6 +63,7 @@ control center applet.
 %package themer
 Summary:	GUI for creating sawmill themes
 Group:		X11/Window Managers
+Group(de):	X11/Fenstermanager
 Group(es):	X11/Administraadores De Ventanas
 Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
@@ -79,7 +82,6 @@ created/edited in a graphical environment.
 %build
 gettextize --copy --force
 autoconf
-LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--disable-static \
 	--enable-capplet \
@@ -97,8 +99,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/gnome/wm-properties
 	DESTDIR=$RPM_BUILD_ROOT \
 	G_MENU_DIR=%{_applnkdir}/Settings
 
-gzip -9nf $RPM_BUILD_ROOT%{_infodir}/sawfish* \
-	README NEWS FAQ TODO
+gzip -9nf README NEWS FAQ TODO
 
 %find_lang %{name}
 
