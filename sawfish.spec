@@ -6,12 +6,13 @@ Summary(ru):	ÔÀœŒŒŸ  Õ≈Œ≈ƒ÷≈“ ƒÃ— X Window
 Summary(uk):	˜¶ÀœŒŒ…  Õ≈Œ≈ƒ÷≈“ ƒÃ— X Window
 Summary(zh_CN):	æﬂ”–∫‹«øµƒ¿©’π–‘∫Õø…≈‰÷√–‘µƒÕº–Œ¥∞ø⁄π‹¿Ì∆˜.
 Name:		sawfish
-Version:	2.0
-Release:	3
-Epoch:		2
+Version:	1.2
+Release:	1
+Epoch:		3
 License:	GPL
 Group:		X11/Window Managers
-Source0:	http://ftp.gnome.org/pub/gnome/sources/sawfish/2.0/%{name}-%{version}.tar.bz2
+#Source0:	http://ftp.gnome.org/pub/gnome/sources/sawfish/2.0/%{name}-%{version}.tar.bz2
+Source0:	http://unc.dl.sourceforge.net/sourceforge/sawmill/%{name}-%{version}-gtk2.tar.gz
 Patch0:		%{name}-applnk.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
@@ -24,9 +25,9 @@ BuildRequires:	gtk+2-devel >= 2.0.3
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
-BuildRequires:	rep-gtk >= 0.16
-BuildRequires:	rep-gtk-gnome >= 0.16
-BuildRequires:	rep-gtk-libglade >= 0.16
+BuildRequires:	rep-gtk >= 0.17
+BuildRequires:	rep-gtk-gnome >= 0.17
+BuildRequires:	rep-gtk-libglade >= 0.17
 BuildRequires:	texinfo
 %define		repexecdir	%(rep-config --execdir || echo "Install_librep-devel_and_rebuild_this_package")
 Requires:	rep-gtk >= 0.16
@@ -111,7 +112,7 @@ control-center oraz wm-entries spec.
 –¡À≈‘.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-gtk2
 %patch0 -p1
 
 %build
