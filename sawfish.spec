@@ -2,7 +2,7 @@ Summary:	A highly configurable and extensible X11 window manager
 Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
 Name:		sawfish
 Version:	1.0.1
-Release:	4
+Release:	5
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -57,14 +57,14 @@ interface; sawmill is mostly-GNOME compliant.
 
 %description -l pl
 Window manad¿er o du¿ych mo¿liwo¶ciach rozszerzania, u¿ywaj±cy
-bazowanego na LISP'ie jêzyka skryptowego, dziêki czemu wszystkie
+bazowanego na LISP-ie jêzyka skryptowego, dziêki czemu wszystkie
 dodatki do okien s± configurowalne. Ogóln± ide± jest, aby daæ jak
 najwiêksz± kontrolê w rêce u¿ytkownika poprzez graficzny interfejs
-dziêki w³a¶nie LISP'owi. Sawmill jest najbardziej zgodny z GNOME'em.
+dziêki w³a¶nie LISP-owi. Sawmill jest najbardziej zgodny z GNOME-m.
 
 %package gnome
 Summary:	GNOME support for sawmill
-Summary(pl):	Support GNOME'a dla sawmill'a
+Summary(pl):	Support GNOME'a dla sawmilla
 Group:		X11/Window Managers
 Requires:	%{name} = %{version}
 Requires:	rep-gtk-gnome >= 0.14-3
@@ -75,12 +75,12 @@ Optional GNOME support for sawmill. Includes a wm-entries spec, and a
 control center applet.
 
 %description gnome -l pl
-Opcjonalny support GNOME'a dla sawmill'a. Zawiera aplet dla
+Opcjonalny support GNOME'a dla sawmilla. Zawiera aplet dla
 control-center oraz wm-entries spec.
 
 %package themer
 Summary:	GUI for creating sawmill themes
-Summary(pl):	GUI do tworzenia tematów dla sawmill'a
+Summary(pl):	GUI do tworzenia tematów dla sawmilla
 Group:		X11/Window Managers
 Requires:	%{name} = %{version}
 
@@ -89,7 +89,7 @@ Optional theme builder for sawmill. Allows static window themes to be
 created/edited in a graphical environment.
 
 %description themer -l pl
-Opcjonalna aplikacja do tworzenia tematów dla sawfish'a. Pozwala na
+Opcjonalna aplikacja do tworzenia tematów dla sawfisha. Pozwala na
 tworzenie/modyfikacjê statycznych tematów w ¶rodowisku graficznym.
 
 %prep
@@ -148,7 +148,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/sawfish
 %attr(755,root,root) %{_bindir}/sawfish-client
 %attr(755,root,root) %{_bindir}/sawfish-ui
-%{_datadir}/sawfish
+%dir %{_datadir}/sawfish
+%{_datadir}/sawfish/[^t]*
+%{_datadir}/sawfish/themes
 
 %{_pixmapsdir}/*
 
