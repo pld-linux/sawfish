@@ -1,0 +1,6 @@
+- sawmill has changed its name to sawfish
+- urls changed
+- update to 0.27.2
+- compilation with audiofile and esound
+- little incompatibility with Xinerama from
+  XFree86 4.0 - problems with compilation
