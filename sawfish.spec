@@ -1,7 +1,7 @@
 Summary:	A highly configurable and extensible X11 window manager
 Name:		sawfish
-Version:	0.29
-Release:	2
+Version:	0.30.2
+Release:	1
 License:	GPL
 Group:		X11/Window Managers
 Group(es):	X11/Administraadores De Ventanas
@@ -26,7 +26,7 @@ BuildRequires:	libtiff-devel
 BuildRequires:	libungif-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
-BuildRequires:	rep-gtk >= 0.12
+BuildRequires:	rep-gtk >= 0.13
 Requires:	/usr/sbin/fix-info-dir
 Obsoletes:	sawmill
 Obsoletes:	sawmill-gnome
