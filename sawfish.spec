@@ -7,7 +7,7 @@ Summary(uk):	В╕конний менеджер для X Window
 Summary(zh_CN):	╬ъсп╨эг©╣дю╘у╧пт╨м©иеДжцпт╣дм╪пн╢╟©з╧эюМфВ
 Name:		sawfish
 Version:	1.3
-Release:	3
+Release:	4
 Epoch:		3
 License:	GPL
 Group:		X11/Window Managers
