@@ -120,6 +120,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libexecdir}/sawfish/DOC
 %attr(755,root,root) %{_libexecdir}/sawfish/*.so
 %attr(755,root,root) %{_libexecdir}/sawfish/*.la
+%attr(755,root,root) %{_libexecdir}/sawfish/gtk-style
+%attr(755,root,root) %{_libexecdir}/sawfish/sawfish-menu
 %{_infodir}/sawfish*
 
 %files gnome
