@@ -38,6 +38,7 @@ BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
 BuildRequires:	rep-gtk >= 0.14-3
 BuildRequires:	rep-gtk-gnome >= 0.14-3
+BuildRequires:	rep-gtk-libglade >= 0.14-3
 BuildRequires:	texinfo
 %define		repexecdir	%(rep-config --execdir)
 Requires:	rep-gtk >= 0.14-3
