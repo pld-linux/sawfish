@@ -23,6 +23,9 @@ BuildRequires:	readline-devel
 BuildRequires:	gettext-devel
 BuildRequires:	audiofile-devel
 BuildRequires:	esound-devel
+Obsoletes:	sawmill
+Obsoletes:	sawmill-gnome
+Obsoletes:	sawmill-themer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
