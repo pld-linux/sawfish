@@ -42,6 +42,7 @@ Obsoletes:	sawmill-themer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
+%define		_wmpropsdir	%{_datadir}/wm-properties
 
 %description
 This is an extensible window manager using a LISP-based scripting
@@ -119,11 +120,13 @@ autoconf
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/gnome/wm-properties
+install -d $RPM_BUILD_ROOT%{_wmpropsdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	G_MENU_DIR=%{_applnkdir}/Settings/GNOME
+
+install Sawfish.desktop $RPM_BUILD_ROOT%{_wmpropsdir}
 
 gzip -9nf README NEWS FAQ TODO
 
@@ -172,7 +175,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/sawfish-capplet
 %{_datadir}/control-center/Sawfish
-%{_datadir}/gnome/wm-properties/Sawfish.desktop
+%{_wmpropsdir}/Sawfish.desktop
 
 %files themer
 %defattr(644,root,root,755)
