@@ -107,7 +107,7 @@ tworzenie/modyfikacjê statycznych tematów w ¶rodowisku graficznym.
 gettextize --copy --force
 libtoolize --copy --force
 aclocal
-autoconf
+%{__autoconf}
 automake -a -c || :
 %configure \
 	--disable-static \
