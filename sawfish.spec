@@ -14,7 +14,7 @@ Epoch:		3
 License:	GPL
 Group:		X11/Window Managers
 #Source0:	http://ftp.gnome.org/pub/gnome/sources/sawfish/2.0/%{name}-%{version}.tar.bz2
-#Source0:	http://unc.dl.sourceforge.net/sourceforge/sawmill/%{name}-%{version}-gtk2.tar.gz
+#Source0:	http://dl.sourceforge.net/sawmill/%{name}-%{version}-gtk2.tar.gz
 Source0:	%{name}-%{version}-%{snap}.tar.bz2
 Patch0:		%{name}-applnk.patch
 URL:		http://sawmill.sourceforge.net/
@@ -41,7 +41,7 @@ Obsoletes:	sawmill-gnome
 Obsoletes:	sawmill-themer
 
 %define		_libexecdir	%{_libdir}
-%define		_wmpropsdir	%{_datadir}/wm-properties
+%define		_wmpropsdir	/usr/share/wm-properties
 
 %description
 This is an extensible window manager using a LISP-based scripting
@@ -120,7 +120,7 @@ control-center oraz specyfikacjê wm-entries.
 %build
 %{__gettextize}
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake} || :
 %configure \
