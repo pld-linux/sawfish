@@ -1,5 +1,10 @@
 Summary:	A highly configurable and extensible X11 window manager
+Summary(es):	Un administrador de ventanas que se puede configurar y extender para X11
 Summary(pl):	Window Manad©er dla X11 o du©ych mo©liwo╤ciach konfiguracyjnych i skalowalno╤ci
+Summary(pt_BR):	Um gerenciador de janelas configurАvel e extensМvel para o X11
+Summary(ru):	Оконный менеджер для X Window
+Summary(uk):	В╕конний менеджер для X Window
+Summary(zh_CN):	╬ъсп╨эг©╣дю╘у╧пт╨м©иеДжцпт╣дм╪пн╢╟©з╧эюМфВ.
 Name:		sawfish
 Version:	2.0
 Release:	2
@@ -40,14 +45,42 @@ This is an extensible window manager using a LISP-based scripting
 language--all window decorations are configurable, the basic idea is
 to have as much user-interface policy as possible controlled through
 the Lisp language. All configuration may be performed through a GTK
-interface; sawmill is mostly-GNOME compliant.
+interface; sawfish is mostly-GNOME compliant.
 
 %description -l pl
 Window manad©er o du©ych mo©liwo╤ciach rozszerzania, u©ywaj╠cy
 bazowanego na LISP-ie jЙzyka skryptowego, dziЙki czemu wszystkie
 dodatki do okien s╠ configurowalne. OgСln╠ ide╠ jest, aby daФ jak
 najwiЙksz╠ kontrolЙ w rЙce u©ytkownika poprzez graficzny interfejs
-dziЙki wЁa╤nie LISP-owi. Sawmill jest najbardziej zgodny z GNOME-m.
+dziЙki wЁa╤nie LISP-owi. Sawfish jest najbardziej zgodny z GNOME-m.
+
+%description -l pt_BR
+O Sawfish И um gerenciador de janelas extensМvel que usa uma linguagem
+de script baseada em Lisp. Todas as decoraГУes de janelas sЦo
+configurАveis e a idИia bАsica e ter a maior parte possМvel das
+polМticas de interface de usuАrio controlada pela linguagem Lisp. A
+configuraГЦo pode ser efetuada escrevendo-se cСdigo Lisp em um arquivo
+.sawfishrc pessoal. O Sawfish provЙ suporte completo para o GNOME.
+
+%description -l ru
+Sawfish - это расширяемый оконный менеджер, использующий основанный на
+Lisp язык сценариев. Все оконные декорации можно конфигурировать,
+базовая идея состоит в том, чтобы контролировать через Lisp
+максимально возможный объем поведения интерфейса пользователя.
+Конфигурирование может быть исполнено написанием Lisp кода в
+персональном файле .sawfishrc, или через GTK+ интерфейс. Sawfish в
+основном совместим с GNOME; если хотите использовать его с GNOME,
+необходимо также установить пакет sawfish-gnome.
+
+%description -l uk
+Sawfish - це розширюваний в╕конний менеджер, що використову╓ базовану
+на Lisp мову сценар╕╖в. Вс╕ в╕конн╕ декорац╕╖ можна конф╕гурувати,
+базова ╕дея поляга╓ в тому, щоб контролювати через Lisp максимально
+можливий об'╓м повед╕нки ╕нтерфейса користувача. Конф╕гурування може
+бути виконане написанням Lisp коду в персональному файл╕ .sawfishrc,
+або через GTK+ ╕нтерфейс. Sawfish здеб╕льшого сум╕сний з GNOME; якщо
+хочете використовувати його з GNOME, потр╕бно також встановити пакет
+sawfish-gnome.
 
 %package gnome
 Summary:	GNOME support for sawmill
@@ -64,6 +97,18 @@ control center applet.
 %description gnome -l pl
 Opcjonalny support GNOME'a dla sawmilla. Zawiera aplet dla
 control-center oraz wm-entries spec.
+
+%description gnome -l ru
+Пакет sawfish-gnome включает поддержку среды GNOME для оконного
+менеджера sawfish (включая апплет для центра управления GNOME). Если
+вы хотите использовать sawfish вместе с GNOME, вам необходимо
+установить этот пакет.
+
+%description gnome -l uk
+Пакет sawfish-gnome включа╓ п╕дтримку середовища GNOME для в╕конного
+менеджера sawfish (включаючи аплет для центру керування GNOME). Якщо
+ви хочете використовувати sawfish з GNOME, вам потр╕бно встановити цей
+пакет.
 
 %prep
 %setup -q
@@ -97,8 +142,6 @@ install -d $RPM_BUILD_ROOT%{_wmpropsdir}
 
 install Sawfish.desktop $RPM_BUILD_ROOT%{_wmpropsdir}
 
-gzip -9nf README NEWS FAQ TODO
-
 %find_lang %{name}
 
 %clean
@@ -112,7 +155,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README NEWS FAQ TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/sawfish
 %{_pixmapsdir}/*
