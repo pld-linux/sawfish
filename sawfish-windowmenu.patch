@@ -1,0 +1,11 @@
+diff -urN sawfish-1.0/lisp/sawfish/wm/menus.jl sawfish-1.0.new/lisp/sawfish/wm/menus.jl
+--- sawfish-1.0/lisp/sawfish/wm/menus.jl	Mon Jun 18 20:36:50 2001
++++ sawfish-1.0.new/lisp/sawfish/wm/menus.jl	Wed Sep  5 11:11:48 2001
+@@ -97,6 +97,7 @@
+ 			 (not (or (window-maximized-p w)
+ 				  (window-maximizable-p w))))))
+       (,(_ "_Close") delete-window)
++      (,(_ "_Kill") destroy-window)
+       ()
+       (,(_ "_Toggle") . window-ops-toggle-menu)
+       (,(_ "In _group") . window-group-menu)
