@@ -11,7 +11,7 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-no_version.patch
 Patch2:		%{name}-no_libnsl.spec
 Patch3:		%{name}-make.patch
-Patch4:         %{name}-windowmenu.patch
+Patch4:		%{name}-windowmenu.patch
 Patch5:		%{name}-nautilus.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
@@ -60,8 +60,7 @@ Window manad¿er o du¿ych mo¿liwo¶ciach rozszerzania, u¿ywaj±cy
 bazowanego na LISP'ie jêzyka skryptowego, dziêki czemu wszystkie
 dodatki do okien s± configurowalne. Ogóln± ide± jest, aby daæ jak
 najwiêksz± kontrolê w rêce u¿ytkownika poprzez graficzny interfejs
-dziêki w³a¶nie LISP'owi.
-Sawmill jest najbardziej zgodny z GNOME'em.
+dziêki w³a¶nie LISP'owi. Sawmill jest najbardziej zgodny z GNOME'em.
 
 %package gnome
 Summary:	GNOME support for sawmill
@@ -75,9 +74,9 @@ Requires:	rep-gtk-libglade >= 0.14-3
 Optional GNOME support for sawmill. Includes a wm-entries spec, and a
 control center applet.
 
-%description -l pl gnome
-Opcjonalny support GNOME'a dla sawmill'a. Zawiera aplet dla control-center
-oraz wm-entries spec.
+%description gnome -l pl
+Opcjonalny support GNOME'a dla sawmill'a. Zawiera aplet dla
+control-center oraz wm-entries spec.
 
 %package themer
 Summary:	GUI for creating sawmill themes
@@ -89,8 +88,8 @@ Requires:	%{name} = %{version}
 Optional theme builder for sawmill. Allows static window themes to be
 created/edited in a graphical environment.
 
-%description -l pl themer
-Opcjonalna aplikacja do tworzenia tematów dla sawfish'a. Pozwala na 
+%description themer -l pl
+Opcjonalna aplikacja do tworzenia tematów dla sawfish'a. Pozwala na
 tworzenie/modyfikacjê statycznych tematów w ¶rodowisku graficznym.
 
 %prep
@@ -99,7 +98,7 @@ tworzenie/modyfikacjê statycznych tematów w ¶rodowisku graficznym.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1 
+%patch4 -p1
 %patch5 -p1
 
 %build
