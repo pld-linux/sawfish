@@ -7,7 +7,7 @@ Summary(uk):	÷¦ËÏÎÎÉÊ ÍÅÎÅÄÖÅÒ ÄÌÑ X Window
 Summary(zh_CN):	¾ßÓÐºÜÇ¿µÄÀ©Õ¹ÐÔºÍ¿ÉÅäÖÃÐÔµÄÍ¼ÐÎ´°¿Ú¹ÜÀíÆ÷.
 Name:		sawfish
 Version:	1.1
-Release:	3
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -26,7 +26,6 @@ BuildRequires:	esound-devel
 BuildRequires:	control-center-devel
 BuildRequires:	gettext-devel
 BuildRequires:	librep-devel
-BuildRequires:	gmp-devel >= 4.1-3
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	imlib-devel >= 1.8.2
