@@ -1,5 +1,3 @@
-%define		repexecdir	%(rep-config --execdir)
-
 Summary:	A highly configurable and extensible X11 window manager
 Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
 Name:		sawfish
@@ -20,8 +18,6 @@ Patch3:		%{name}-make.patch
 Patch4:		%{name}-po.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
-Requires:	rep-gtk >= 0.14-3
-Requires:	%{repexecdir}
 BuildRequires:	autoconf
 BuildRequires:	esound-devel
 BuildRequires:	control-center-devel
@@ -40,10 +36,13 @@ BuildRequires:	gmp-devel
 BuildRequires:	rep-gtk >= 0.14-3
 BuildRequires:	rep-gtk-gnome >= 0.14-3
 BuildRequires:	rep-gtk-libglade >= 0.14-3
+%define		repexecdir	%(rep-config --execdir)
+Requires:	rep-gtk >= 0.14-3
+Requires:	%{repexecdir}
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	sawmill
 Obsoletes:	sawmill-gnome
 Obsoletes:	sawmill-themer
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_libexecdir	%{_libdir}
