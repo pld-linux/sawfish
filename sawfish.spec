@@ -2,7 +2,7 @@ Summary:	A highly configurable and extensible X11 window manager
 Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
 Name:		sawfish
 Version:	1.0.1
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -16,6 +16,7 @@ Patch1:		%{name}-no_version.patch
 Patch2:		%{name}-no_libnsl.spec
 Patch3:		%{name}-make.patch
 Patch4:         %{name}-windowmenu.patch
+Patch5:		%{name}-nautilus.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
 BuildRequires:	autoconf
@@ -35,7 +36,6 @@ BuildRequires:	libtool
 BuildRequires:	libungif-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
-BuildRequires:	rep-gtk >= 0.14-3
 BuildRequires:	rep-gtk >= 0.14-3
 BuildRequires:	rep-gtk-gnome >= 0.14-3
 BuildRequires:	texinfo
@@ -111,6 +111,7 @@ tworzenie/modyfikacjê statycznych tematów w ¶rodowisku graficznym.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1 
+%patch5 -p1
 
 %build
 gettextize --copy --force
