@@ -1,0 +1,89 @@
+--- sawfish-0.38/po/zh_TW.Big5.po.wiget	Mon Dec 18 20:35:20 2000
++++ sawfish-0.38/po/zh_TW.Big5.po	Tue May 15 22:52:11 2001
+@@ -11,7 +11,7 @@
+ 
+ #. ../scripts/sawfish-about.jl
+ msgid "and many others..."
+-msgstr "¤Î³\\¦h¨ä¥L¤H..."
++msgstr "¤Î³\¦h¨ä¥L¤H..."
+ 
+ #. ../scripts/sawfish-about.jl
+ msgid "Sawfish manages your windows extensibly."
+@@ -1001,7 +1001,7 @@
+ "back to the original size."
+ msgstr ""
+ "¼Wªø¬O§_¥N¥Ü³Ì¤j¤Æ. ·í§A±Ò¥Î³o­Ó¿ï¶µ®É, §A¥i¥H¥Î `ÁÙ­ìµøµ¡³Ì¤j¤Æ'\n"
+-"¤§Ãþªº¥\\¯à¨Óªð¦^­ì¨Óªºµøµ¡¤j¤p."
++"¤§Ãþªº¥\¯à¨Óªð¦^­ì¨Óªºµøµ¡¤j¤p."
+ 
+ #. ../lisp/sawfish/wm/commands/grow-pack.jl
+ msgid ""
+@@ -1017,9 +1017,9 @@
+ msgstr ""
+ "¦b¥]»qµøµ¡®É¬O§_¤Î¦p¦ó¨Ó²¾°Ê´å¼Ð.\n"
+ "\n"
+-"`¤]³\\' ¥Nªí­Y´å¼Ð©ó¥]»q®É¦bµøµ¡½d³ò¤º«h´å¼Ð¸òµÛµøµ¡²¾°Ê.\n"
++"`¤]³\' ¥Nªí­Y´å¼Ð©ó¥]»q®É¦bµøµ¡½d³ò¤º«h´å¼Ð¸òµÛµøµ¡²¾°Ê.\n"
+ "\n"
+-"`Á`¬O' ©ó´å¼Ð¤£¦bµøµ¡¤º®É¥ý±N¨ä¸õ¶Ç¨ìµøµ¡¤¤¤ß, µM«á´N¦p¦P `¤]³\\'\n"
++"`Á`¬O' ©ó´å¼Ð¤£¦bµøµ¡¤º®É¥ý±N¨ä¸õ¶Ç¨ìµøµ¡¤¤¤ß, µM«á´N¦p¦P `¤]³\'\n"
+ "\n"
+ "`±q¤£' ¥Nªí¤£¸õ¶Ç´å¼Ð."
+ 
+@@ -1367,7 +1367,7 @@
+ 
+ #. ../lisp/sawfish/wm/ext/match-window.jl
+ msgid "Placement"
+-msgstr "Â\\©ñ"
++msgstr "Â\©ñ"
+ 
+ #. ../lisp/sawfish/wm/ext/match-window.jl
+ msgid "Focus"
+@@ -1631,11 +1631,11 @@
+ 
+ #. ../lisp/sawfish/wm/state/maximize.jl
+ msgid "Let unmanaged windows be overlapped when filling windows."
+-msgstr "¶ñº¡µøµ¡®É¥i±N¤£¨üºÞªºµøµ¡»\\©¹."
++msgstr "¶ñº¡µøµ¡®É¥i±N¤£¨üºÞªºµøµ¡»\©¹."
+ 
+ #. ../lisp/sawfish/wm/state/maximize.jl
+ msgid "Don't cover `avoided' windows when maximizing."
+-msgstr "³Ì¤j¤Æ®É¤£­n»\\¨ì `Á×¶}' ªºµøµ¡."
++msgstr "³Ì¤j¤Æ®É¤£­n»\¨ì `Á×¶}' ªºµøµ¡."
+ 
+ #. ../lisp/sawfish/wm/state/maximize.jl
+ msgid "Maximize the dimensions of the window."
+--- sawfish-0.38/po/ko.po.wiget	Thu Mar  8 02:57:03 2001
++++ sawfish-0.38/po/ko.po	Tue May 15 22:52:11 2001
+@@ -956,9 +956,6 @@
+ "\n"
+ "A negative number means outside the top window edge."
+ msgstr ""
+-"¿öÇÁ ÀÌµ¿½Ã »ó´Ü Ã¢ °¡ÀåÀÚ¸®·ÎºÙÀÇ ¿ÀÇÁ¼Â(%)®\n"
+-"\n"
+-"À½¼ö¸¦ ÁÖ¸é »ó´Ü Ã¢ÀÇ ¿ÜºÎ·Î ÀÌµ¿ÇÕ´Ï´Ù."
+ 
+ #. ../lisp/sawfish/wm/windows.jl
+ msgid ""
+--- sawfish-0.38/po/pl.po.wiget	Tue May 15 22:52:44 2001
++++ sawfish-0.38/po/pl.po	Tue May 15 22:53:51 2001
+@@ -11,7 +11,7 @@
+ "Last-Translator: Daniel Koæ <kocio@bigfoot.com>\n"
+ "Language-Team: Polski <pl@li.org>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=ISO 8859-2\n"
++"Content-Type: text/plain; charset=ISO-8859-2\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "X-Generator: KBabel 0.6\n"
+ 
+--- sawfish-0.38/po/sl.po.wiget	Tue May 15 22:53:21 2001
++++ sawfish-0.38/po/sl.po	Tue May 15 22:53:43 2001
+@@ -10,7 +10,7 @@
+ "Last-Translator: Andraz Tori <andraz.tori1@guest.arnes.si>\n"
+ "Language-Team: Slovenian <sl@li.org>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=iso8859-2\n"
++"Content-Type: text/plain; charset=ISO-8859-2\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ #. ../scripts/sawfish-about.jl
