@@ -9,7 +9,7 @@ diff -Nur sawfish-0.31.1.orig/configure.in sawfish-0.31.1/configure.in
 -localedir='${sawfishdir}/${version}/locale'
 -sawfishexecdir='${libexecdir}/sawfish/${version}/${host_type}'
 +lispdir='${sawfishdir}/lisp'
-+localedir='${sawfishdir}/locale'
++localedir='${datadir}/locale'
 +sawfishexecdir='${libexecdir}/sawfish/${host_type}'
  
  dnl Checks for programs.
