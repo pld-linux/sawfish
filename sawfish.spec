@@ -7,7 +7,7 @@ Summary(uk):	÷¦ËÏÎÎÉÊ ÍÅÎÅÄÖÅÒ ÄÌÑ X Window
 Summary(zh_CN):	¾ßÓÐºÜÇ¿µÄÀ©Õ¹ÐÔºÍ¿ÉÅäÖÃÐÔµÄÍ¼ÐÎ´°¿Ú¹ÜÀíÆ÷
 Name:		sawfish
 Version:	1.3
-Release:	1
+Release:	2
 Epoch:		3
 License:	GPL
 Group:		X11/Window Managers
@@ -34,10 +34,11 @@ BuildRequires:	texinfo
 %define		repexecdir	%(rep-config --execdir || echo "Install_librep-devel_and_rebuild_this_package")
 Requires:	rep-gtk >= 0.16
 Requires:	%{repexecdir}
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Provides:	gnome-wm
 Obsoletes:	sawmill
 Obsoletes:	sawmill-gnome
 Obsoletes:	sawmill-themer
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}
 %define		_wmpropsdir	/usr/share/wm-properties
@@ -131,7 +132,8 @@ control-center oraz specyfikacjê wm-entries.
 	--with-esd \
 	--with-audiofile \
 	--with-gnu-ld
-%{__make} host_type=%{_host}
+%{__make} \
+	host_type=%{_host}
 
 %install
 rm -rf $RPM_BUILD_ROOT
