@@ -20,7 +20,6 @@ BuildRequires:	esound-devel
 BuildRequires:	control-center-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
-BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	imlib-devel >= 1.8.2
 BuildRequires:	libjpeg-devel
@@ -92,8 +91,7 @@ autoconf
 	--with-readline \
 	--with-esd \
 	--with-audiofile \
-	--without-static \
-	--with-gdk-pixbuf
+	--without-static
 %{__make}
 
 %install
