@@ -1,8 +1,8 @@
 Summary:	A highly configurable and extensible X11 window manager
 Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
 Name:		sawfish
-Version:	1.0
-Release:	5
+Version:	1.0.1
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -10,15 +10,15 @@ Group(de):	X11/Fenstermanager
 Group(es):	X11/Administraadores De Ventanas
 Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
-Source0:	ftp://sawmill.sourceforge.net/pub/sawmill/%{name}-%{version}.tar.gz
+Source0:	http://prdownloads.sourceforge.net/sawmill/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-no_version.patch
 Patch2:		%{name}-no_libnsl.spec
 Patch3:		%{name}-make.patch
-Patch4:		%{name}-po.patch
-Patch5:         %{name}-config.h.patch
+#Patch4:		%{name}-po.patch
+#Patch5:         %{name}-config.h.patch
 Patch6:         %{name}-windowmenu.patch
-Patch7:		%{name}-use_system_libtool.patch
+#Patch7:		%{name}-use_system_libtool.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
 BuildRequires:	autoconf
@@ -110,10 +110,10 @@ tworzenie/modyfikacjê statycznych tematów w ¶rodowisku graficznym.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1 
-%patch5 -p1
+#%patch4 -p1 
+#%patch5 -p1
 %patch6 -p1
-%patch7 -p1
+#%patch7 -p1
 
 %build
 gettextize --copy --force
@@ -129,7 +129,7 @@ automake -a -c || :
 	--with-readline \
 	--with-esd \
 	--with-audiofile \
-	--disable-static
+	--with-gnu-ld
 %{__make}
 
 %install
