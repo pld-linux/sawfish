@@ -1,0 +1,76 @@
+diff -urN sawfish-1.0.1.org/src/events.c sawfish-1.0.1/src/events.c
+--- sawfish-1.0.1.org/src/events.c	Fri Jan  4 20:30:42 2002
++++ sawfish-1.0.1/src/events.c	Fri Jan  4 20:30:59 2002
+@@ -1292,6 +1292,7 @@
+     }
+ 
+     emit_pending_destroys ();
++    commit_queued_focus_change ();
+ }
+ 
+ /* Handle all available X events on file descriptor FD. */
+diff -urN sawfish-1.0.1.org/src/sawmill_subrs.h sawfish-1.0.1/src/sawmill_subrs.h
+--- sawfish-1.0.1.org/src/sawmill_subrs.h	Fri Jan  4 20:30:42 2002
++++ sawfish-1.0.1/src/sawmill_subrs.h	Fri Jan  4 20:31:04 2002
+@@ -297,6 +297,7 @@
+ extern int pending_destroys;
+ extern repv Qadd_window_hook, Qbefore_add_window_hook, Qplace_window_hook;
+ extern bool mapped_not_override_p (Window id);
++extern void commit_queued_focus_change (void);
+ extern void focus_on_window (Lisp_Window *w);
+ extern void focus_off_window (Lisp_Window *w);
+ extern void fix_window_size (Lisp_Window *w);
+diff -urN sawfish-1.0.1.org/src/windows.c sawfish-1.0.1/src/windows.c
+--- sawfish-1.0.1.org/src/windows.c	Fri Jan  4 20:30:42 2002
++++ sawfish-1.0.1/src/windows.c	Fri Jan  4 20:31:10 2002
+@@ -109,6 +109,21 @@
+ 	return TRUE;
+ }
+ 
++static Window queued_focus_id;
++static int queued_focus_revert;
++static Time queued_focus_time; 
++
++void
++commit_queued_focus_change (void)
++{
++    if (queued_focus_id != 0)
++    {
++       XSetInputFocus (dpy, queued_focus_id,
++                       queued_focus_revert, queued_focus_time);
++       queued_focus_id = 0;
++    }
++}
++
+ /* Give the input focus to window W, or to no window if W is null */
+ void
+ focus_on_window (Lisp_Window *w)
+@@ -137,6 +152,7 @@
+ 
+ 		send_client_message (w->id, xa_wm_take_focus,
+ 				     last_event_time - 1);
++    queued_focus_time = last_event_time - 1;        /* evil */
+ 
+ 		/* Only focus on the window if accepts-input is true */
+ 		if (window_input_hint_p (w))
+@@ -151,14 +167,18 @@
+ 	    focus = w->frame;
+ 	if (focus != 0)
+ 	{
+-	    XSetInputFocus (dpy, focus, RevertToParent, last_event_time);
++      queued_focus_id = focus;
++      queued_focus_revert = RevertToParent;
++      queued_focus_time = last_event_time;
+ 	    pending_focus_window = w;
+ 	}
+     }
+     else
+     {
+ 	DB(("focus_on_window (nil)\n"));
+-	XSetInputFocus (dpy, no_focus_window, RevertToNone, last_event_time);
++  queued_focus_id = no_focus_window;
++  queued_focus_revert = RevertToNone;
++  queued_focus_time = last_event_time;
+ 	pending_focus_window = 0;
+     }
+ }
