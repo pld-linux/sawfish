@@ -26,6 +26,7 @@ BuildRequires:	automake
 BuildRequires:	esound-devel
 BuildRequires:	control-center-devel
 BuildRequires:	gettext-devel
+BuildRequires:	librep-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	imlib-devel >= 1.8.2
