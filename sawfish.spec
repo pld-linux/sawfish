@@ -98,7 +98,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/gnome/wm-properties
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	G_MENU_DIR=%{_applnkdir}/Settings
+	G_MENU_DIR=%{_applnkdir}/Settings/GNOME
 
 gzip -9nf README NEWS FAQ TODO
 
