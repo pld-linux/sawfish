@@ -1,8 +1,10 @@
+%define		repexecdir	%(rep-config --execdir)
+
 Summary:	A highly configurable and extensible X11 window manager
 Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
 Name:		sawfish
 Version:	0.38
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -15,9 +17,11 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-no_version.patch
 Patch2:		%{name}-no_libnsl.spec
 Patch3:		%{name}-make.patch
+Patch4:		%{name}-po.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
 Requires:	rep-gtk >= 0.14-3
+Requires:	%{repexecdir}
 BuildRequires:	autoconf
 BuildRequires:	esound-devel
 BuildRequires:	control-center-devel
@@ -42,6 +46,7 @@ Obsoletes:	sawmill-themer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
+%define		_libexecdir	%{_libdir}
 %define		_wmpropsdir	%{_datadir}/wm-properties
 
 %description
@@ -103,9 +108,11 @@ tworzenie/modyfikacjê statycznych tematów w ¶rodowisku graficznym.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1 
 
 %build
 gettextize --copy --force
+aclocal
 autoconf
 %configure \
 	--disable-static \
@@ -165,9 +172,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/sawfish/wm/util/*.la
 %{_libexecdir}/sawfish/%{_host}/DOC
 
-%dir /usr/libexec/rep/%{_host}/sawfish
-%attr(755,root,root) /usr/libexec/rep/%{_host}/sawfish/*.so
-%attr(755,root,root) /usr/libexec/rep/%{_host}/sawfish/*.la
+%dir %{repexecdir}/sawfish
+%attr(755,root,root) %{repexecdir}/sawfish/*.so
+%attr(755,root,root) %{repexecdir}/sawfish/*.la
 
 %{_infodir}/sawfish*
 
