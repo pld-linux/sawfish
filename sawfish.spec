@@ -6,10 +6,6 @@ Release:	4
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
-Group(de):	X11/Fenstermanager
-Group(es):	X11/Administraadores De Ventanas
-Group(fr):	X11/Gestionnaires De Fenêtres
-Group(pl):	X11/Zarz±dcy Okien
 Source0:	http://prdownloads.sourceforge.net/sawmill/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-no_version.patch
@@ -71,10 +67,6 @@ Sawmill jest najbardziej zgodny z GNOME'em.
 Summary:	GNOME support for sawmill
 Summary(pl):	Support GNOME'a dla sawmill'a
 Group:		X11/Window Managers
-Group(de):	X11/Fenstermanager
-Group(es):	X11/Administraadores De Ventanas
-Group(fr):	X11/Gestionnaires De Fenêtres
-Group(pl):	X11/Zarz±dcy Okien
 Requires:	%{name} = %{version}
 Requires:	rep-gtk-gnome >= 0.14-3
 Requires:	rep-gtk-libglade >= 0.14-3
@@ -91,10 +83,6 @@ oraz wm-entries spec.
 Summary:	GUI for creating sawmill themes
 Summary(pl):	GUI do tworzenia tematów dla sawmill'a
 Group:		X11/Window Managers
-Group(de):	X11/Fenstermanager
-Group(es):	X11/Administraadores De Ventanas
-Group(fr):	X11/Gestionnaires De Fenêtres
-Group(pl):	X11/Zarz±dcy Okien
 Requires:	%{name} = %{version}
 
 %description themer
