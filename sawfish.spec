@@ -1,6 +1,6 @@
 Summary:	A highly configurable and extensible X11 window manager
 Summary(es):	Un administrador de ventanas que se puede configurar y extender para X11
-Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
+Summary(pl):	Zarz±dca okien dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
 Summary(pt_BR):	Um gerenciador de janelas configurável e extensível para o X11
 Summary(ru):	ïËÏÎÎÙÊ ÍÅÎÅÄÖÅÒ ÄÌÑ X Window
 Summary(uk):	÷¦ËÏÎÎÉÊ ÍÅÎÅÄÖÅÒ ÄÌÑ X Window
@@ -49,9 +49,9 @@ the Lisp language. All configuration may be performed through a GTK
 interface; sawfish is mostly-GNOME compliant.
 
 %description -l pl
-Window manad¿er o du¿ych mo¿liwo¶ciach rozszerzania, u¿ywaj±cy
+Zarz±dca okien o du¿ych mo¿liwo¶ciach rozszerzania, u¿ywaj±cy
 bazowanego na LISP-ie jêzyka skryptowego, dziêki czemu wszystkie
-dodatki do okien s± configurowalne. Ogóln± ide± jest, aby daæ jak
+dodatki do okien s± konfigurowalne. Ogóln± ide± jest, aby daæ jak
 najwiêksz± kontrolê w rêce u¿ytkownika poprzez graficzny interfejs
 dziêki w³a¶nie LISP-owi. Sawfish jest najbardziej zgodny z GNOME-m.
 
@@ -96,8 +96,8 @@ Optional GNOME support for sawmill. Includes a wm-entries spec, and a
 control center applet.
 
 %description gnome -l pl
-Opcjonalny support GNOME'a dla sawmilla. Zawiera aplet dla
-control-center oraz wm-entries spec.
+Opcjonalne wsparcie GNOME'a dla sawmilla. Zawiera aplet dla
+control-center oraz specyfikacjê wm-entries.
 
 %description gnome -l ru
 ğÁËÅÔ sawfish-gnome ×ËÌÀŞÁÅÔ ĞÏÄÄÅÒÖËÕ ÓÒÅÄÙ GNOME ÄÌÑ ÏËÏÎÎÏÇÏ
