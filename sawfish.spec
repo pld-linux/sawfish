@@ -1,4 +1,4 @@
-%define	dsnap	2002-05-24
+%define	dsnap	2002-06-11
 %define	snap	%(echo %{dsnap} | sed -e "s#-##g")
 Summary:	A highly configurable and extensible X11 window manager
 Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
@@ -13,20 +13,19 @@ URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
 BuildRequires:	autoconf		
 BuildRequires:	automake
-BuildRequires:	esound-devel
+BuildRequires:	esound-devel >= 0.2.27
 BuildRequires:	gettext-devel
-BuildRequires:	librep-devel
-BuildRequires:	gtk+2-devel
-BuildRequires:	librep-devel
+BuildRequires:	librep-devel >= 0.15.2.20020611
+BuildRequires:	gtk+2-devel >= 2.0.3
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
-BuildRequires:	rep-gtk
-BuildRequires:	rep-gtk-gnome
-BuildRequires:	rep-gtk-libglade
+BuildRequires:	rep-gtk >= 0.16-0.20020611
+BuildRequires:	rep-gtk-gnome >= 0.16-0.20020611
+BuildRequires:	rep-gtk-libglade >= 0.16-0.20020611
 BuildRequires:	texinfo
 %define		repexecdir	%(rep-config --execdir || echo "Install_librep-devel_and_rebuild_this_package")
-Requires:	rep-gtk >= 0.16-0.20020524
+Requires:	rep-gtk >= 0.16-0.20020611
 Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	sawmill
@@ -71,11 +70,11 @@ control-center oraz wm-entries spec.
 %setup -q -n %{name}-%{dsnap}
 
 %build
-gettextize --copy --force
-libtoolize --copy --force
-aclocal
-%{__autoconf}
-automake -a -c || :
+#gettextize --copy --force
+#libtoolize --copy --force
+#aclocal
+#%{__autoconf}
+#automake -a -c || :
 %configure \
 	--disable-static \
 	--enable-capplet \
