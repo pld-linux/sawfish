@@ -54,39 +54,39 @@ This is an extensible window manager using a LISP-based scripting
 language--all window decorations are configurable, the basic idea is
 to have as much user-interface policy as possible controlled through
 the Lisp language. All configuration may be performed through a GTK
-interface; sawmill is mostly-GNOME compliant.
+interface; sawfish is mostly-GNOME compliant.
 
 %description -l pl
 Window manad¿er o du¿ych mo¿liwo¶ciach rozszerzania, u¿ywaj±cy
 bazowanego na LISP-ie jêzyka skryptowego, dziêki czemu wszystkie
 dodatki do okien s± configurowalne. Ogóln± ide± jest, aby daæ jak
 najwiêksz± kontrolê w rêce u¿ytkownika poprzez graficzny interfejs
-dziêki w³a¶nie LISP-owi. Sawmill jest najbardziej zgodny z GNOME-m.
+dziêki w³a¶nie LISP-owi. Sawfish jest najbardziej zgodny z GNOME-m.
 
 %package gnome
-Summary:	GNOME support for sawmill
-Summary(pl):	Support GNOME'a dla sawmilla
+Summary:	GNOME support for sawfish
+Summary(pl):	Support GNOME'a dla sawfisha
 Group:		X11/Window Managers
 Requires:	%{name} = %{version}
 Requires:	rep-gtk-gnome >= 0.14-3
 Requires:	rep-gtk-libglade >= 0.14-3
 
 %description gnome
-Optional GNOME support for sawmill. Includes a wm-entries spec, and a
+Optional GNOME support for sawfish. Includes a wm-entries spec, and a
 control center applet.
 
 %description gnome -l pl
-Opcjonalny support GNOME'a dla sawmilla. Zawiera aplet dla
+Opcjonalny support GNOME'a dla sawfisha. Zawiera aplet dla
 control-center oraz wm-entries spec.
 
 %package themer
-Summary:	GUI for creating sawmill themes
-Summary(pl):	GUI do tworzenia tematów dla sawmilla
+Summary:	GUI for creating sawfish themes
+Summary(pl):	GUI do tworzenia tematów dla sawfisha
 Group:		X11/Window Managers
 Requires:	%{name} = %{version}
 
 %description themer
-Optional theme builder for sawmill. Allows static window themes to be
+Optional theme builder for sawfish. Allows static window themes to be
 created/edited in a graphical environment.
 
 %description themer -l pl
