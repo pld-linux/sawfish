@@ -1,7 +1,7 @@
 Summary:	A highly configurable and extensible X11 window manager
 Name:		sawfish
 Version:	0.29
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Window Managers
 Group(es):	X11/Administraadores De Ventanas
