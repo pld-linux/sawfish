@@ -18,12 +18,11 @@ URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
 BuildRequires:	autoconf		
 BuildRequires:	automake
-BuildRequires:	esound-devel >= 0.2.27
+BuildRequires:	esound-devel
 BuildRequires:	gettext-devel
-BuildRequires:	librep-devel >= 0.16
-BuildRequires:	gtk+2-devel >= 2.0.3
+BuildRequires:	librep-devel
+BuildRequires:	gtk+2-devel
 BuildRequires:	libtool
-BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
 BuildRequires:	rep-gtk >= 0.17
 BuildRequires:	rep-gtk-gnome >= 0.17
