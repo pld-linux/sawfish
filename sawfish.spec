@@ -14,6 +14,7 @@ Source0:	ftp://sawmill.sourceforge.net/pub/sawmill/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-no_version.patch
 Patch2:		%{name}-no_libnsl.spec
+Patch3:		%{name}-make.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
 Requires:	rep-gtk >= 0.14-3
@@ -100,6 +101,7 @@ tworzenie/modyfikacjê statycznych tematów w ¶rodowisku graficznym.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 gettextize --copy --force
@@ -107,10 +109,12 @@ autoconf
 %configure \
 	--disable-static \
 	--enable-capplet \
+	--enable-themer \
+	--enable-gnome-widgets \
 	--with-readline \
 	--with-esd \
 	--with-audiofile \
-	--without-static
+	--disable-static
 %{__make}
 
 %install
@@ -142,17 +146,26 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/sawfish-ui
 %{_datadir}/sawfish
 
+%{_pixmapsdir}/*
+
 %dir %{_libexecdir}/sawfish
 %dir %{_libexecdir}/sawfish/%{_host}
-
-%{_libexecdir}/sawfish/%{_host}/DOC
-%{_libexecdir}/sawfish/%{_host}/sawfish
-/usr/libexec/rep/%{_host}/sawfish
-
 %attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/*.so
 %attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/*.la
 %attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/gtk-style
 %attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/sawfish-menu
+%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/sawfish-about
+%dir %{_libexecdir}/sawfish/%{_host}/sawfish
+%dir %{_libexecdir}/sawfish/%{_host}/sawfish/wm
+%dir %{_libexecdir}/sawfish/%{_host}/sawfish/wm/util
+%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/sawfish/wm/util/*.so
+%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/sawfish/wm/util/*.la
+%{_libexecdir}/sawfish/%{_host}/DOC
+
+%dir /usr/libexec/rep/%{_host}/sawfish
+%attr(755,root,root) /usr/libexec/rep/%{_host}/sawfish/*.so
+%attr(755,root,root) /usr/libexec/rep/%{_host}/sawfish/*.la
+
 %{_infodir}/sawfish*
 
 %files gnome
