@@ -1,5 +1,3 @@
-%define		snap 20030126
-
 Summary:	A highly configurable and extensible X11 window manager
 Summary(es):	Un administrador de ventanas que se puede configurar y extender para X11
 Summary(pl):	Zarz±dca okien dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
@@ -14,7 +12,6 @@ Epoch:		3
 License:	GPL
 Group:		X11/Window Managers
 #Source0:	http://ftp.gnome.org/pub/gnome/sources/sawfish/2.0/%{name}-%{version}.tar.bz2
-#Source0:	%{name}-%{version}-%{snap}.tar.bz2
 Source0:	http://dl.sourceforge.net/sawmill/%{name}-%{version}.tar.gz
 # Source0-md5:	9e5ce5e76c60acecdb1889c1f173295a
 Source1:	%{name}-xsession.desktop
@@ -25,8 +22,8 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel >= 0.2.27
 BuildRequires:	gettext-devel
-BuildRequires:	librep-devel >= 0.16
 BuildRequires:	gtk+2-devel >= 2.0.3
+BuildRequires:	librep-devel >= 0.16
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
@@ -138,7 +135,7 @@ control-center oraz specyfikacjê wm-entries.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_datadir}/xsession,%{_wmpropsdir}}
+install -d $RPM_BUILD_ROOT{%{_datadir}/xsessions,%{_wmpropsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
@@ -146,7 +143,7 @@ install -d $RPM_BUILD_ROOT{%{_datadir}/xsession,%{_wmpropsdir}}
 	host_type=%{_host}
 
 install Sawfish.desktop $RPM_BUILD_ROOT%{_wmpropsdir}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsession/%{name}.desktop
+install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/%{name}.desktop
 
 %find_lang %{name}
 
@@ -164,7 +161,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README NEWS FAQ TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/sawfish
-%{_datadir}/xsession/%{name}.desktop
+%{_datadir}/xsessions/%{name}.desktop
 %{_pixmapsdir}/*
 
 %dir %{_libexecdir}/sawfish
