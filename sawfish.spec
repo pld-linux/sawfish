@@ -1,5 +1,10 @@
 Summary:	A highly configurable and extensible X11 window manager
+Summary(es):	Un administrador de ventanas que se puede configurar y extender para X11
 Summary(pl):	Window Manad©er dla X11 o du©ych mo©liwo╤ciach konfiguracyjnych i skalowalno╤ci
+Summary(pt_BR):	Um gerenciador de janelas configurАvel e extensМvel para o X11
+Summary(ru):	Оконный менеджер для X Window
+Summary(uk):	В╕конний менеджер для X Window
+Summary(zh_CN):	╬ъсп╨эг©╣дю╘у╧пт╨м©иеДжцпт╣дм╪пн╢╟©з╧эюМфВ.
 Name:		sawfish
 Version:	1.1
 Release:	1
@@ -62,9 +67,39 @@ dodatki do okien s╠ configurowalne. OgСln╠ ide╠ jest, aby daФ jak
 najwiЙksz╠ kontrolЙ w rЙce u©ytkownika poprzez graficzny interfejs
 dziЙki wЁa╤nie LISP-owi. Sawfish jest najbardziej zgodny z GNOME-m.
 
+%description -l pt_BR
+O Sawfish И um gerenciador de janelas extensМvel que usa uma linguagem
+de script baseada em Lisp. Todas as decoraГУes de janelas sЦo
+configurАveis e a idИia bАsica e ter a maior parte possМvel das
+polМticas de interface de usuАrio controlada pela linguagem Lisp. A
+configuraГЦo pode ser efetuada escrevendo-se cСdigo Lisp em um arquivo
+.sawfishrc pessoal. O Sawfish provЙ suporte completo para o GNOME.
+
+%description -l ru
+Sawfish - это расширяемый оконный менеджер, использующий основанный на
+Lisp язык сценариев. Все оконные декорации можно конфигурировать,
+базовая идея состоит в том, чтобы контролировать через Lisp
+максимально возможный объем поведения интерфейса пользователя.
+Конфигурирование может быть исполнено написанием Lisp кода в
+персональном файле .sawfishrc, или через GTK+ интерфейс. Sawfish в
+основном совместим с GNOME; если хотите использовать его с GNOME,
+необходимо также установить пакет sawfish-gnome.
+
+%description -l uk
+Sawfish - це розширюваний в╕конний менеджер, що використову╓ базовану
+на Lisp мову сценар╕╖в. Вс╕ в╕конн╕ декорац╕╖ можна конф╕гурувати,
+базова ╕дея поляга╓ в тому, щоб контролювати через Lisp максимально
+можливий об'╓м повед╕нки ╕нтерфейса користувача. Конф╕гурування може
+бути виконане написанням Lisp коду в персональному файл╕ .sawfishrc,
+або через GTK+ ╕нтерфейс. Sawfish здеб╕льшого сум╕сний з GNOME; якщо
+хочете використовувати його з GNOME, потр╕бно також встановити пакет
+sawfish-gnome.
+
 %package gnome
 Summary:	GNOME support for sawfish
 Summary(pl):	Support GNOME'a dla sawfisha
+Summary(ru):	Поддержка среды GNOME для оконного менеджера sawfish
+Summary(uk):	П╕дтримка середовища GNOME для в╕конного менеджера sawfish
 Group:		X11/Window Managers
 Requires:	%{name} = %{version}
 Requires:	rep-gtk-gnome >= 0.14-3
@@ -78,9 +113,25 @@ control center applet.
 Opcjonalny support GNOME'a dla sawfisha. Zawiera aplet dla
 control-center oraz wm-entries spec.
 
+%description gnome -l ru
+Пакет sawfish-gnome включает поддержку среды GNOME для оконного
+менеджера sawfish (включая апплет для центра управления GNOME). Если
+вы хотите использовать sawfish вместе с GNOME, вам необходимо
+установить этот пакет.
+
+%description gnome -l uk
+Пакет sawfish-gnome включа╓ п╕дтримку середовища GNOME для в╕конного
+менеджера sawfish (включаючи аплет для центру керування GNOME). Якщо
+ви хочете використовувати sawfish з GNOME, вам потр╕бно встановити цей
+пакет.
+
 %package themer
 Summary:	GUI for creating sawfish themes
 Summary(pl):	GUI do tworzenia tematСw dla sawfisha
+Summary(pt_BR):	Interface para criaГЦo de temas para o gerenciador de janelas sawfish
+Summary(ru):	Графический интерфейс для создания "тем" оконного менеджера sawfish
+Summary(uk):	Граф╕чний ╕нтерфейс для створення "тем" в╕конного менеджера sawfish
+Summary(zh_CN):	р╩╦Ж Sawfish м╪пн╢╟©з╧эюМфВ╣дGUI
 Group:		X11/Window Managers
 Requires:	%{name} = %{version}
 
@@ -91,6 +142,20 @@ created/edited in a graphical environment.
 %description themer -l pl
 Opcjonalna aplikacja do tworzenia tematСw dla sawfisha. Pozwala na
 tworzenie/modyfikacjЙ statycznych tematСw w ╤rodowisku graficznym.
+
+%description themer -l pt_BR
+O pacote sawfish-themer contИm um construtor opcional de temas para o
+gerenciador de janelas sawfish. O sawfish-themer permite que temas de
+janelas estАticas possam ser criados e editados em um ambiente
+grАfico.
+
+%description themer -l ru
+Пакет sawfish-themer содержит опциональную программу построения тем
+для оконного менеджера sawfish.
+
+%description themer -l uk
+Пакет sawfish-themer м╕стить опц╕ональну програму побудови тем для
+в╕конного менеджера sawfish.
 
 %prep
 %setup -q -n %{name}-%{version}-gtk1
