@@ -22,7 +22,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel >= 1:0.2.27
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2.0.3
+BuildRequires:	gtk+2-devel >= 1:2.0.3
 BuildRequires:	librep-devel >= 0.16
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
