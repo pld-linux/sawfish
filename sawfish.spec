@@ -2,7 +2,7 @@ Summary:	A highly configurable and extensible X11 window manager
 Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
 Name:		sawfish
 Version:	1.0.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -36,7 +36,9 @@ BuildRequires:	libungif-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
 BuildRequires:	rep-gtk >= 0.14-3
+BuildRequires:	rep-gtk >= 0.14-3
 BuildRequires:	rep-gtk-gnome >= 0.14-3
+BuildRequires:	texinfo
 %define		repexecdir	%(rep-config --execdir)
 Requires:	rep-gtk >= 0.14-3
 Requires:	%{repexecdir}
