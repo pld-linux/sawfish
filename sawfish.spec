@@ -171,7 +171,7 @@ gráfico.
 %build
 %{__gettextize}
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake} || :
 %configure \
