@@ -89,7 +89,7 @@ sawfish-gnome.
 Summary:	GNOME support for sawmill
 Summary(pl):	Support GNOME'a dla sawmilla
 Group:		X11/Window Managers
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 Requires:	rep-gtk-gnome >= 0.14-3
 Requires:	rep-gtk-libglade >= 0.14-3
 
