@@ -105,7 +105,7 @@ tworzenie/modyfikacjê statycznych tematów w ¶rodowisku graficznym.
 %{__libtoolize}
 aclocal
 %{__autoconf}
-%{__automake}
+%{__automake} || :
 %configure \
 	--disable-static \
 	--enable-capplet \
