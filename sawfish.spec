@@ -1,31 +1,32 @@
 Summary:	A highly configurable and extensible X11 window manager
 Name:		sawfish
-Version:	0.27.2
+Version:	0.29
 Release:	1
 License:	GPL
 Group:		X11/Window Managers
 Group(es):	X11/Administraadores De Ventanas
 Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
-Source0:	ftp://sawmill.sourceforge.net/pub/sawmill/%{name}-%{version}.tar.gz
+Source0:	ftp://download.sourceforge.net/pub/sourceforge/sawmill/%{name}-%{version}.tar.gz
 Patch0:		sawfish-info.patch
-Patch1:		ftp://ftp.dcs.warwick.ac.uk/people/John.Harper/sawfish/patches/sawmill-gdk-pixbuf-diffs
-Patch2:		sawfish-xinerama.patch
+Patch1:		sawfish-xinerama.patch
+Patch2:		sawfish-no_version.patch
 URL:		http://sawmill.sourceforge.net
+BuildRequires:	esound-devel
 BuildRequires:	control-center-devel
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	imlib-devel >= 1.8.2
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
-BuildRequires:	librep-devel >= 0.11
+BuildRequires:	librep-devel >= 0.12
+BuildRequires:	librep-jl >= 0.12
 BuildRequires:	libtiff-devel
 BuildRequires:	libungif-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
-BuildRequires:	gettext-devel
-BuildRequires:	audiofile-devel
-BuildRequires:	esound-devel
+BuildRequires:	rep-gtk >= 0.12
 Requires:	/usr/sbin/fix-info-dir
 Obsoletes:	sawmill
 Obsoletes:	sawmill-gnome
@@ -69,14 +70,14 @@ created/edited in a graphical environment.
 %prep
 %setup -q
 %patch0 -p1
-# %patch1 
-%patch2 
+%patch2 -p1
 
 %build
 gettextize --copy --force
 autoconf
 LDFLAGS="-s"; export LDFLAGS
 %configure \
+	--disable-static \
 	--enable-capplet \
 	--with-readline \
 	--with-esd \
@@ -86,12 +87,18 @@ LDFLAGS="-s"; export LDFLAGS
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/{gnome/wm-properties,control-center}
+install -d $RPM_BUILD_ROOT%{_datadir}/gnome/wm-properties
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	G_MENU_DIR=%{_applnkdir}/Settings
+
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libexecdir}/sawfish/*.so
 
 gzip -9nf $RPM_BUILD_ROOT%{_infodir}/sawfish* \
 	README NEWS FAQ TODO
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -102,7 +109,7 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_bindir}/sawfish
@@ -110,8 +117,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/sawfish-ui
 %{_datadir}/sawfish
 %dir %{_libexecdir}/sawfish
-%dir %{_libexecdir}/sawfish/%{version}
-%{_libexecdir}/sawfish/%{version}/%{_host}
+%{_libexecdir}/sawfish/DOC
+%attr(755,root,root) %{_libexecdir}/sawfish/*.so
+%attr(755,root,root) %{_libexecdir}/sawfish/*.la
 %{_infodir}/sawfish*
 
 %files gnome
@@ -123,4 +131,4 @@ rm -rf $RPM_BUILD_ROOT
 %files themer
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/sawfish-themer
-%{_datadir}/sawfish/%{version}/themer.glade
+%{_datadir}/sawfish/themer.glade
