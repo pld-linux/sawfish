@@ -106,7 +106,7 @@ tworzenie/modyfikacjê statycznych tematów w ¶rodowisku graficznym.
 
 %build
 gettextize --copy --force
-libtoolize --copy --force
+%{__libtoolize}
 aclocal
 %{__autoconf}
 automake -a -c || :
