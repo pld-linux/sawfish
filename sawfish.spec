@@ -39,6 +39,7 @@ BuildRequires:	rep-gtk-libglade >= 0.14-3
 BuildRequires:	texinfo
 %define		repexecdir	%(rep-config --execdir || echo "Install_librep-devel_and_rebuild_this_package")
 Requires:	rep-gtk >= 0.14-3
+Requires:	rep-gtk-gnome >= 0.14.3
 Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	sawmill
