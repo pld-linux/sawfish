@@ -7,7 +7,7 @@ Summary(uk):	÷¦ËÏÎÎÉÊ ÍÅÎÅÄÖÅÒ ÄÌÑ X Window
 Summary(zh_CN):	¾ßÓÐºÜÇ¿µÄÀ©Õ¹ÐÔºÍ¿ÉÅäÖÃÐÔµÄÍ¼ÐÎ´°¿Ú¹ÜÀíÆ÷.
 Name:		sawfish
 Version:	1.1
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -26,6 +26,7 @@ BuildRequires:	esound-devel
 BuildRequires:	control-center-devel
 BuildRequires:	gettext-devel
 BuildRequires:	librep-devel
+BuildRequires:	gmp-devel >= 4.1-3
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	imlib-devel >= 1.8.2
@@ -42,6 +43,7 @@ BuildRequires:	rep-gtk-gnome >= 0.14-3
 BuildRequires:	rep-gtk-libglade >= 0.14-3
 BuildRequires:	texinfo
 %define		repexecdir	%(rep-config --execdir || echo "Install_librep-devel_and_rebuild_this_package")
+Requires:	gmp >= 4.1-3
 Requires:	rep-gtk >= 0.14-3
 Requires:	rep-gtk-gnome >= 0.14.3
 Requires:	%{repexecdir}
