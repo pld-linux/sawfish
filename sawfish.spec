@@ -17,6 +17,7 @@ Group:		X11/Window Managers
 #Source0:	%{name}-%{version}-%{snap}.tar.bz2
 Source0:	http://dl.sourceforge.net/sawmill/%{name}-%{version}.tar.gz
 # Source0-md5:	9e5ce5e76c60acecdb1889c1f173295a
+Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-applnk.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
@@ -137,7 +138,7 @@ control-center oraz specyfikacjê wm-entries.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_wmpropsdir}
+install -d $RPM_BUILD_ROOT{%{_datadir}/xsessions,%{_wmpropsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
@@ -145,6 +146,7 @@ install -d $RPM_BUILD_ROOT%{_wmpropsdir}
 	host_type=%{_host}
 
 install Sawfish.desktop $RPM_BUILD_ROOT%{_wmpropsdir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsession/%{name}.desktop
 
 %find_lang %{name}
 
@@ -162,6 +164,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README NEWS FAQ TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/sawfish
+%{_datadir}/xsessions/%{name}.desktop
 %{_pixmapsdir}/*
 
 %dir %{_libexecdir}/sawfish
