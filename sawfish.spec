@@ -2,7 +2,7 @@ Summary:	A highly configurable and extensible X11 window manager
 Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
 Name:		sawfish
 Version:	1.0.1
-Release:	6
+Release:	7
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -132,8 +132,6 @@ install -d $RPM_BUILD_ROOT%{_wmpropsdir}
 
 install Sawfish.desktop $RPM_BUILD_ROOT%{_wmpropsdir}
 
-gzip -9nf README NEWS FAQ TODO
-
 %find_lang %{name}
 
 %clean
@@ -147,7 +145,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README NEWS FAQ TODO
 %attr(755,root,root) %{_bindir}/sawfish
 %attr(755,root,root) %{_bindir}/sawfish-client
 %attr(755,root,root) %{_bindir}/sawfish-ui
