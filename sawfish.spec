@@ -20,7 +20,7 @@ Source0:	http://dl.sourceforge.net/sawmill/%{name}-%{version}.tar.gz
 Patch0:		%{name}-applnk.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
-BuildRequires:	autoconf		
+BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel >= 0.2.27
 BuildRequires:	gettext-devel
