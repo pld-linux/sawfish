@@ -1,16 +1,16 @@
 Summary:	A highly configurable and extensible X11 window manager
 Name:		sawfish
 Version:	0.30.3
-Release: 2
+Release:	2
 License:	GPL
 Group:		X11/Window Managers
 Group(es):	X11/Administraadores De Ventanas
 Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/sawmill/%{name}-%{version}.tar.gz
-Patch0:		sawfish-info.patch
-Patch1:		sawfish-xinerama.patch
-Patch2:		sawfish-no_version.patch
+Patch0:		%{name}-info.patch
+Patch1:		%{name}-xinerama.patch
+Patch2:		%{name}-no_version.patch
 URL:		http://sawmill.sourceforge.net
 BuildRequires:	esound-devel
 BuildRequires:	control-center-devel
