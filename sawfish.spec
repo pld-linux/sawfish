@@ -17,6 +17,7 @@ Patch2:		%{name}-no_libnsl.spec
 Patch3:		%{name}-make.patch
 Patch4:		%{name}-po.patch
 Patch5:         %{name}-config.h.patch
+Patch6:         %{name}-windowmenu.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
 BuildRequires:	autoconf
@@ -109,6 +110,7 @@ tworzenie/modyfikacjê statycznych tematów w ¶rodowisku graficznym.
 %patch3 -p1
 %patch4 -p1 
 %patch5 -p1
+%patch6 -p1
 
 %build
 gettextize --copy --force
