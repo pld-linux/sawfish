@@ -1,4 +1,4 @@
-%define	dsnap	2002-05-02
+%define	dsnap	2002-05-24
 %define	snap	%(echo %{dsnap} | sed -e "s#-##g")
 Summary:	A highly configurable and extensible X11 window manager
 Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
@@ -26,7 +26,7 @@ BuildRequires:	rep-gtk-gnome
 BuildRequires:	rep-gtk-libglade
 BuildRequires:	texinfo
 %define		repexecdir	%(rep-config --execdir || echo "Install_librep-devel_and_rebuild_this_package")
-Requires:	rep-gtk >= 0.14-3
+Requires:	rep-gtk >= 0.16-0.20020524
 Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	sawmill
