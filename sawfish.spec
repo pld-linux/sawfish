@@ -7,7 +7,7 @@ Summary(uk):	В╕конний менеджер для X Window
 Summary(zh_CN):	╬ъсп╨эг©╣дю╘у╧пт╨м©иеДжцпт╣дм╪пн╢╟©з╧эюМфВ
 Name:		sawfish
 Version:	1.2
-Release:	1
+Release:	2
 Epoch:		3
 License:	GPL
 Group:		X11/Window Managers
@@ -37,7 +37,6 @@ Obsoletes:	sawmill
 Obsoletes:	sawmill-gnome
 Obsoletes:	sawmill-themer
 
-%define		_prefix		/usr/X11R6
 %define		_libexecdir	%{_libdir}
 %define		_wmpropsdir	%{_datadir}/wm-properties
 
