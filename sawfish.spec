@@ -1,7 +1,7 @@
 Summary:	A highly configurable and extensible X11 window manager
 Name:		sawfish
 Version:	0.32
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Window Managers
 Group(de):	X11/Fenstermanager
@@ -119,8 +119,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/sawfish-client
 %attr(755,root,root) %{_bindir}/sawfish-ui
 %{_datadir}/sawfish
+
 %dir %{_libexecdir}/sawfish
+%dir %{_libexecdir}/sawfish/%{_host}
+
 %{_libexecdir}/sawfish/%{_host}/DOC
+%{_libexecdir}/sawfish/%{_host}/sawfish
+/usr/libexec/rep/%{_host}/sawfish
+
 %attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/*.so
 %attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/*.la
 %attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/gtk-style
