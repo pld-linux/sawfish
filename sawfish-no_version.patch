@@ -1,6 +1,6 @@
-diff -Nru sawfish-0.31/configure.in sawfish-0.31.new/configure.in
---- sawfish-0.31/configure.in	Thu Sep 21 22:05:13 2000
-+++ sawfish-0.31.new/configure.in	Thu Sep 21 22:06:18 2000
+diff -Nur sawfish-0.31.1.orig/configure.in sawfish-0.31.1/configure.in
+--- sawfish-0.31.1.orig/configure.in	Thu Sep 28 17:18:59 2000
++++ sawfish-0.31.1/configure.in	Thu Nov  2 03:28:08 2000
 @@ -55,9 +55,9 @@
  esac
  
@@ -10,13 +10,13 @@ diff -Nru sawfish-0.31/configure.in sawfish-0.31.new/configure.in
 -sawfishexecdir='${libexecdir}/sawfish/${version}/${host_type}'
 +lispdir='${sawfishdir}/lisp'
 +localedir='${sawfishdir}/locale'
-+sawfishexecdir='${libexecdir}/sawfish/
++sawfishexecdir='${libexecdir}/sawfish/${host_type}'
  
  dnl Checks for programs.
  AC_PROG_CC
-diff -Nru sawfish-0.31/sounds/Makefile.in sawfish-0.31.new/sounds/Makefile.in
---- sawfish-0.31/sounds/Makefile.in	Thu Sep 21 22:05:13 2000
-+++ sawfish-0.31.new/sounds/Makefile.in	Thu Sep 21 21:46:54 2000
+diff -Nur sawfish-0.31.1.orig/sounds/Makefile.in sawfish-0.31.1/sounds/Makefile.in
+--- sawfish-0.31.1.orig/sounds/Makefile.in	Thu Jul  6 15:30:07 2000
++++ sawfish-0.31.1/sounds/Makefile.in	Thu Nov  2 03:30:13 2000
 @@ -27,7 +27,7 @@
  VPATH=@srcdir@:@top_srcdir@
  
@@ -26,9 +26,9 @@ diff -Nru sawfish-0.31/sounds/Makefile.in sawfish-0.31.new/sounds/Makefile.in
  
  all :
  
-diff -Nru sawfish-0.31/themer/Makefile.in sawfish-0.31.new/themer/Makefile.in
---- sawfish-0.31/themer/Makefile.in	Thu Sep 21 22:05:13 2000
-+++ sawfish-0.31.new/themer/Makefile.in	Thu Sep 21 21:46:54 2000
+diff -Nur sawfish-0.31.1.orig/themer/Makefile.in sawfish-0.31.1/themer/Makefile.in
+--- sawfish-0.31.1.orig/themer/Makefile.in	Fri Jul 28 19:45:08 2000
++++ sawfish-0.31.1/themer/Makefile.in	Thu Nov  2 03:32:10 2000
 @@ -26,8 +26,7 @@
  srcdir=@srcdir@
  VPATH=@srcdir@:@top_srcdir@
@@ -57,9 +57,9 @@ diff -Nru sawfish-0.31/themer/Makefile.in sawfish-0.31.new/themer/Makefile.in
  
  clean :
  	rm -f *~ themer.jl *.jlc *.bak core
-diff -Nru sawfish-0.31/themer/themer.in sawfish-0.31.new/themer/themer.in
---- sawfish-0.31/themer/themer.in	Thu Sep 21 22:05:13 2000
-+++ sawfish-0.31.new/themer/themer.in	Thu Sep 21 21:46:54 2000
+diff -Nur sawfish-0.31.1.orig/themer/themer.in sawfish-0.31.1/themer/themer.in
+--- sawfish-0.31.1.orig/themer/themer.in	Thu Sep 28 17:19:02 2000
++++ sawfish-0.31.1/themer/themer.in	Thu Nov  2 03:33:45 2000
 @@ -31,7 +31,7 @@
  (setq backtrace-on-error '(bad-arg missing-arg void-value invalid-function))
  
@@ -69,9 +69,9 @@ diff -Nru sawfish-0.31/themer/themer.in sawfish-0.31.new/themer/themer.in
  (defvar locale-dir "__locale_dir__")
  
  (when (and (not (get-command-line-option "--disable-nls"))
-diff -Nru sawfish-0.31/themes/Makefile.in sawfish-0.31.new/themes/Makefile.in
---- sawfish-0.31/themes/Makefile.in	Thu Sep 21 22:05:14 2000
-+++ sawfish-0.31.new/themes/Makefile.in	Thu Sep 21 21:46:54 2000
+diff -Nur sawfish-0.31.1.orig/themes/Makefile.in sawfish-0.31.1/themes/Makefile.in
+--- sawfish-0.31.1.orig/themes/Makefile.in	Thu Jul  6 15:30:07 2000
++++ sawfish-0.31.1/themes/Makefile.in	Thu Nov  2 03:35:06 2000
 @@ -27,7 +27,7 @@
  VPATH=@srcdir@:@top_srcdir@
  
