@@ -53,37 +53,4 @@
  
  #. ../lisp/sawfish/wm/state/maximize.jl
  msgid "Maximize the dimensions of the window."
---- sawfish-0.38/po/ko.po.wiget	Thu Mar  8 02:57:03 2001
-+++ sawfish-0.38/po/ko.po	Tue May 15 22:52:11 2001
-@@ -956,9 +956,6 @@
- "\n"
- "A negative number means outside the top window edge."
- msgstr ""
--"¿öÇÁ ÀÌµ¿½Ã »ó´Ü Ã¢ °¡ÀåÀÚ¸®·ÎºÙÀÇ ¿ÀÇÁ¼Â(%)®\n"
--"\n"
--"À½¼ö¸¦ ÁÖ¸é »ó´Ü Ã¢ÀÇ ¿ÜºÎ·Î ÀÌµ¿ÇÕ´Ï´Ù."
  
- #. ../lisp/sawfish/wm/windows.jl
- msgid ""
---- sawfish-0.38/po/pl.po.wiget	Tue May 15 22:52:44 2001
-+++ sawfish-0.38/po/pl.po	Tue May 15 22:53:51 2001
-@@ -11,7 +11,7 @@
- "Last-Translator: Daniel Koæ <kocio@bigfoot.com>\n"
- "Language-Team: Polski <pl@li.org>\n"
- "MIME-Version: 1.0\n"
--"Content-Type: text/plain; charset=ISO 8859-2\n"
-+"Content-Type: text/plain; charset=ISO-8859-2\n"
- "Content-Transfer-Encoding: 8bit\n"
- "X-Generator: KBabel 0.6\n"
- 
---- sawfish-0.38/po/sl.po.wiget	Tue May 15 22:53:21 2001
-+++ sawfish-0.38/po/sl.po	Tue May 15 22:53:43 2001
-@@ -10,7 +10,7 @@
- "Last-Translator: Andraz Tori <andraz.tori1@guest.arnes.si>\n"
- "Language-Team: Slovenian <sl@li.org>\n"
- "MIME-Version: 1.0\n"
--"Content-Type: text/plain; charset=iso8859-2\n"
-+"Content-Type: text/plain; charset=ISO-8859-2\n"
- "Content-Transfer-Encoding: 8bit\n"
- 
- #. ../scripts/sawfish-about.jl
