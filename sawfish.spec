@@ -14,8 +14,9 @@ Epoch:		3
 License:	GPL
 Group:		X11/Window Managers
 #Source0:	http://ftp.gnome.org/pub/gnome/sources/sawfish/2.0/%{name}-%{version}.tar.bz2
-Source0:	http://dl.sourceforge.net/sawmill/%{name}-%{version}.tar.gz
 #Source0:	%{name}-%{version}-%{snap}.tar.bz2
+Source0:	http://dl.sourceforge.net/sawmill/%{name}-%{version}.tar.gz
+# Source0-md5:	9e5ce5e76c60acecdb1889c1f173295a
 Patch0:		%{name}-applnk.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
