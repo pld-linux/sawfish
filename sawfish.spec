@@ -2,11 +2,12 @@ Summary:	A highly configurable and extensible X11 window manager
 Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
 Name:		sawfish
 Version:	2.0
-Release:	1
+Release:	2
 Epoch:		2
 License:	GPL
 Group:		X11/Window Managers
 Source0:	http://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-applnk.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
 BuildRequires:	autoconf		
@@ -66,6 +67,7 @@ control-center oraz wm-entries spec.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__gettextize}
