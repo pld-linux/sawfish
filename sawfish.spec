@@ -1,7 +1,7 @@
 Summary:	A highly configurable and extensible X11 window manager
 Name:		sawfish
-Version:	0.30.3
-Release:	5
+Version:	0.31.1
+Release:	1
 License:	GPL
 Group:		X11/Window Managers
 Group(es):	X11/Administraadores De Ventanas
@@ -12,8 +12,7 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-no_version.patch
 Patch2:		%{name}-no_libnsl.spec
 URL:		http://sawmill.sourceforge.net
-Requires:	librep-jl
-Requires:	rep-gtk
+Requires:	rep-gtk >= 0.14-3
 BuildRequires:	autoconf
 BuildRequires:	esound-devel
 BuildRequires:	control-center-devel
@@ -23,13 +22,15 @@ BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	imlib-devel >= 1.8.2
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng >= 1.0.8
-BuildRequires:	librep-devel >= 0.12
-BuildRequires:	librep-jl >= 0.12
+BuildRequires:	librep-devel >= 0.13.2-2
 BuildRequires:	libtiff-devel
 BuildRequires:	libungif-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
-BuildRequires:	rep-gtk >= 0.13
+BuildRequires:	gmp-devel
+BuildRequires:	rep-gtk >= 0.14-3
+BuildRequires:	rep-gtk-gnome >= 0.14-3
+BuildRequires:	rep-gtk-libglade >= 0.14-3
 Obsoletes:	sawmill
 Obsoletes:	sawmill-gnome
 Obsoletes:	sawmill-themer
@@ -96,8 +97,6 @@ install -d $RPM_BUILD_ROOT%{_datadir}/gnome/wm-properties
 	DESTDIR=$RPM_BUILD_ROOT \
 	G_MENU_DIR=%{_applnkdir}/Settings
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libexecdir}/sawfish/*.so
-
 gzip -9nf $RPM_BUILD_ROOT%{_infodir}/sawfish* \
 	README NEWS FAQ TODO
 
@@ -120,11 +119,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/sawfish-ui
 %{_datadir}/sawfish
 %dir %{_libexecdir}/sawfish
-%{_libexecdir}/sawfish/DOC
-%attr(755,root,root) %{_libexecdir}/sawfish/*.so
-%attr(755,root,root) %{_libexecdir}/sawfish/*.la
-%attr(755,root,root) %{_libexecdir}/sawfish/gtk-style
-%attr(755,root,root) %{_libexecdir}/sawfish/sawfish-menu
+%{_libexecdir}/sawfish/%{_host}/DOC
+%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/*.so
+%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/*.la
+%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/gtk-style
+%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/sawfish-menu
 %{_infodir}/sawfish*
 
 %files gnome
