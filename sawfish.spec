@@ -1,31 +1,29 @@
-%define	dsnap	2002-06-11
-%define	snap	%(echo %{dsnap} | sed -e "s#-##g")
 Summary:	A highly configurable and extensible X11 window manager
 Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
 Name:		sawfish
-Version:	2.0.pre1
-Release:	0.%{snap}
-Epoch:		1
+Version:	2.0
+Release:	1
+Epoch:		2
 License:	GPL
 Group:		X11/Window Managers
-Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{dsnap}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
 BuildRequires:	autoconf		
 BuildRequires:	automake
 BuildRequires:	esound-devel >= 0.2.27
 BuildRequires:	gettext-devel
-BuildRequires:	librep-devel >= 0.15.2.20020611
+BuildRequires:	librep-devel >= 0.16
 BuildRequires:	gtk+2-devel >= 2.0.3
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
-BuildRequires:	rep-gtk >= 0.16-0.20020611
-BuildRequires:	rep-gtk-gnome >= 0.16-0.20020611
-BuildRequires:	rep-gtk-libglade >= 0.16-0.20020611
+BuildRequires:	rep-gtk >= 0.16
+BuildRequires:	rep-gtk-gnome >= 0.16
+BuildRequires:	rep-gtk-libglade >= 0.16
 BuildRequires:	texinfo
 %define		repexecdir	%(rep-config --execdir || echo "Install_librep-devel_and_rebuild_this_package")
-Requires:	rep-gtk >= 0.16-0.20020611
+Requires:	rep-gtk >= 0.16
 Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	sawmill
@@ -67,7 +65,7 @@ Opcjonalny support GNOME'a dla sawmilla. Zawiera aplet dla
 control-center oraz wm-entries spec.
 
 %prep
-%setup -q -n %{name}-%{dsnap}
+%setup -q
 
 %build
 %{__gettextize}
