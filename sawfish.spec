@@ -2,7 +2,7 @@ Summary:	A highly configurable and extensible X11 window manager
 Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
 Name:		sawfish
 Version:	1.0
-Release:	4
+Release:	5
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -18,9 +18,11 @@ Patch3:		%{name}-make.patch
 Patch4:		%{name}-po.patch
 Patch5:         %{name}-config.h.patch
 Patch6:         %{name}-windowmenu.patch
+Patch7:		%{name}-use_system_libtool.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	esound-devel
 BuildRequires:	control-center-devel
 BuildRequires:	gettext-devel
@@ -31,12 +33,12 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	libpng >= 1.0.8
 BuildRequires:	librep-devel >= 0.14
 BuildRequires:	libtiff-devel
+BuildRequires:	libtool
 BuildRequires:	libungif-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
 BuildRequires:	rep-gtk >= 0.14-3
 BuildRequires:	rep-gtk-gnome >= 0.14-3
-BuildRequires:	rep-gtk-libglade >= 0.14-3
 %define		repexecdir	%(rep-config --execdir)
 Requires:	rep-gtk >= 0.14-3
 Requires:	%{repexecdir}
@@ -111,11 +113,14 @@ tworzenie/modyfikacjê statycznych tematów w ¶rodowisku graficznym.
 %patch4 -p1 
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1
 
 %build
 gettextize --copy --force
+libtoolize --copy --force
 aclocal
 autoconf
+automake -a -c || :
 %configure \
 	--disable-static \
 	--enable-capplet \
