@@ -1,41 +1,29 @@
+%define	dsnap	2002-05-02
+%define	snap	%(echo %{dsnap} | sed -e "s#-##g")
 Summary:	A highly configurable and extensible X11 window manager
 Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
 Name:		sawfish
-Version:	1.0.1
-Release:	6
+Version:	2.0.pre1
+Release:	0.%{snap}
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
-Source0:	http://prdownloads.sourceforge.net/sawmill/%{name}-%{version}.tar.gz
-Patch0:		%{name}-info.patch
-Patch1:		%{name}-no_version.patch
-Patch2:		%{name}-no_libnsl.spec
-Patch3:		%{name}-make.patch
-Patch4:		%{name}-windowmenu.patch
-Patch5:		%{name}-nautilus.patch
-Patch6:		%{name}-ac25x.patch
+Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{dsnap}.tar.bz2
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
-BuildRequires:	autoconf
+BuildRequires:	autoconf		
 BuildRequires:	automake
 BuildRequires:	esound-devel
-BuildRequires:	control-center-devel
 BuildRequires:	gettext-devel
 BuildRequires:	librep-devel
-BuildRequires:	gnome-libs-devel
-BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	imlib-devel >= 1.8.2
-BuildRequires:	libjpeg-devel
-BuildRequires:	libpng >= 1.0.8
-BuildRequires:	librep-devel >= 0.14
-BuildRequires:	libtiff-devel
+BuildRequires:	gtk+2-devel
+BuildRequires:	librep-devel
 BuildRequires:	libtool
-BuildRequires:	libungif-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
-BuildRequires:	rep-gtk >= 0.14-3
-BuildRequires:	rep-gtk-gnome >= 0.14-3
-BuildRequires:	rep-gtk-libglade >= 0.14-3
+BuildRequires:	rep-gtk
+BuildRequires:	rep-gtk-gnome
+BuildRequires:	rep-gtk-libglade
 BuildRequires:	texinfo
 %define		repexecdir	%(rep-config --execdir || echo "Install_librep-devel_and_rebuild_this_package")
 Requires:	rep-gtk >= 0.14-3
@@ -79,29 +67,8 @@ control center applet.
 Opcjonalny support GNOME'a dla sawmilla. Zawiera aplet dla
 control-center oraz wm-entries spec.
 
-%package themer
-Summary:	GUI for creating sawmill themes
-Summary(pl):	GUI do tworzenia tematów dla sawmilla
-Group:		X11/Window Managers
-Requires:	%{name} = %{version}
-
-%description themer
-Optional theme builder for sawmill. Allows static window themes to be
-created/edited in a graphical environment.
-
-%description themer -l pl
-Opcjonalna aplikacja do tworzenia tematów dla sawfisha. Pozwala na
-tworzenie/modyfikacjê statycznych tematów w ¶rodowisku graficznym.
-
 %prep
-%setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
+%setup -q -n %{name}-%{dsnap}
 
 %build
 gettextize --copy --force
@@ -147,42 +114,31 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc *.gz
-%attr(755,root,root) %{_bindir}/sawfish
-%attr(755,root,root) %{_bindir}/sawfish-client
-%attr(755,root,root) %{_bindir}/sawfish-ui
-%dir %{_datadir}/sawfish
-%{_datadir}/sawfish/[^t]*
-%{_datadir}/sawfish/themes
-
+%attr(755,root,root) %{_bindir}/*
+%{_datadir}/sawfish
 %{_pixmapsdir}/*
 
 %dir %{_libexecdir}/sawfish
-%dir %{_libexecdir}/sawfish/%{_host}
-%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/*.so
-%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/*.la
-%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/gtk-style
-%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/sawfish-menu
-%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/sawfish-about
-%dir %{_libexecdir}/sawfish/%{_host}/sawfish
-%dir %{_libexecdir}/sawfish/%{_host}/sawfish/wm
-%dir %{_libexecdir}/sawfish/%{_host}/sawfish/wm/util
-%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/sawfish/wm/util/*.so
-%attr(755,root,root) %{_libexecdir}/sawfish/%{_host}/sawfish/wm/util/*.la
-%{_libexecdir}/sawfish/%{_host}/DOC
+%dir %{_libexecdir}/sawfish/%{version}
+%dir %{_libexecdir}/sawfish/%{version}/%{_host}
+%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/*.so
+%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/*.la
+%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/gtk-style
+%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish-menu
+%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish-about
+%dir %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish
+%dir %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish/wm
+%dir %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish/wm/util
+%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish/wm/util/*.so
+%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish/wm/util/*.la
+%{_libexecdir}/sawfish/%{version}/%{_host}/DOC
 
 %dir %{repexecdir}/sawfish
 %attr(755,root,root) %{repexecdir}/sawfish/*.so
 %attr(755,root,root) %{repexecdir}/sawfish/*.la
-
 %{_infodir}/sawfish*
 
 %files gnome
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/sawfish-capplet
-%{_datadir}/control-center/Sawfish
+%{_datadir}/control-center-2.0/capplets/*
 %{_wmpropsdir}/Sawfish.desktop
-
-%files themer
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/sawfish-themer
-%{_datadir}/sawfish/themer.glade
