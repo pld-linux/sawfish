@@ -1,6 +1,6 @@
 Summary:	A highly configurable and extensible X11 window manager
 Name:		sawfish
-Version:	0.37.2
+Version:	0.37.3
 Release:	1
 Epoch:		1
 License:	GPL
@@ -13,7 +13,8 @@ Source0:	ftp://sawmill.sourceforge.net/pub/sawmill/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-no_version.patch
 Patch2:		%{name}-no_libnsl.spec
-URL:		http://sawmill.sourceforge.net
+URL:		http://sawmill.sourceforge.net/
+Icon:		sawfish.xpm
 Requires:	rep-gtk >= 0.14-3
 BuildRequires:	autoconf
 BuildRequires:	esound-devel
@@ -39,7 +40,6 @@ Obsoletes:	sawmill-themer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
-%define		_infodir	/usr/share/info
 
 %description
 This is an extensible window manager using a LISP-based scripting
