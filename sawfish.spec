@@ -138,7 +138,7 @@ control-center oraz specyfikacjê wm-entries.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_datadir}/xsessions,%{_wmpropsdir}}
+install -d $RPM_BUILD_ROOT{%{_datadir}/xsession,%{_wmpropsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
@@ -164,7 +164,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README NEWS FAQ TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/sawfish
-%{_datadir}/xsessions/%{name}.desktop
+%{_datadir}/xsession/%{name}.desktop
 %{_pixmapsdir}/*
 
 %dir %{_libexecdir}/sawfish
