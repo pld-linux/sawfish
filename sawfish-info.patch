@@ -8,8 +8,8 @@ diff -Nru sawmill-0.24/man/sawmill.texi sawmill-0.24.new/man/sawmill.texi
 +@format
 +@dircategory Miscellaneous:
  @direntry
--* sawmill: (sawmill).		sawmill programming manual
-+* sawmill: (sawmill).			sawmill window manager manual
+-* sawfish: (sawfish).		sawfish programming manual
++* sawfish: (sawfish).			sawfish window manager manual
  @end direntry
 +@end format
  
