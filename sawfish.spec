@@ -4,7 +4,7 @@ Summary(pl):	Zarz╠dca okien dla X11 o du©ych mo©liwo╤ciach konfiguracyjnych i sk
 Summary(pt_BR):	Um gerenciador de janelas configurАvel e extensМvel para o X11
 Summary(ru):	Оконный менеджер для X Window
 Summary(uk):	В╕конний менеджер для X Window
-Summary(zh_CN):	╬ъсп╨эг©╣дю╘у╧пт╨м©иеДжцпт╣дм╪пн╢╟©з╧эюМфВ.
+Summary(zh_CN):	╬ъсп╨эг©╣дю╘у╧пт╨м©иеДжцпт╣дм╪пн╢╟©з╧эюМфВ
 Name:		sawfish
 Version:	1.2
 Release:	1
