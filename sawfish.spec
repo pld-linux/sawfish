@@ -8,14 +8,14 @@ Summary(ru):	Оконный менеджер для X Window
 Summary(uk):	В╕конний менеджер для X Window
 Summary(zh_CN):	╬ъсп╨эг©╣дю╘у╧пт╨м©иеДжцпт╣дм╪пн╢╟©з╧эюМфВ
 Name:		sawfish
-Version:	1.2
-Release:	3.%{snap}.1
+Version:	1.3
+Release:	1
 Epoch:		3
 License:	GPL
 Group:		X11/Window Managers
 #Source0:	http://ftp.gnome.org/pub/gnome/sources/sawfish/2.0/%{name}-%{version}.tar.bz2
-#Source0:	http://dl.sourceforge.net/sawmill/%{name}-%{version}-gtk2.tar.gz
-Source0:	%{name}-%{version}-%{snap}.tar.bz2
+Source0:	http://dl.sourceforge.net/sawmill/%{name}-%{version}.tar.gz
+#Source0:	%{name}-%{version}-%{snap}.tar.bz2
 Patch0:		%{name}-applnk.patch
 URL:		http://sawmill.sourceforge.net/
 Icon:		sawfish.xpm
