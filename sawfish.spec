@@ -4,10 +4,13 @@ Version:	0.27.2
 Release:	1
 License:	GPL
 Group:		X11/Window Managers
+Group(es):	X11/Administraadores De Ventanas
+Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
-Source:		ftp://sawmill.sourceforge.net/pub/sawmill/%{name}-%{version}.tar.gz
+Source0:	ftp://sawmill.sourceforge.net/pub/sawmill/%{name}-%{version}.tar.gz
 Patch0:		sawfish-info.patch
 Patch1:		ftp://ftp.dcs.warwick.ac.uk/people/John.Harper/sawfish/patches/sawmill-gdk-pixbuf-diffs
+Patch2:		sawfish-xinerama.patch
 URL:		http://sawmill.sourceforge.net
 BuildRequires:	control-center-devel
 BuildRequires:	gnome-libs-devel
@@ -23,6 +26,7 @@ BuildRequires:	readline-devel
 BuildRequires:	gettext-devel
 BuildRequires:	audiofile-devel
 BuildRequires:	esound-devel
+Requires:	/usr/sbin/fix-info-dir
 Obsoletes:	sawmill
 Obsoletes:	sawmill-gnome
 Obsoletes:	sawmill-themer
@@ -33,14 +37,16 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This is an extensible window manager using a LISP-based scripting
-language--all window decorations are configurable, the basic idea is to
-have as much user-interface policy as possible controlled through the Lisp
-language. All configuration may be performed through a GTK interface;
-sawmill is mostly-GNOME compliant.
+language--all window decorations are configurable, the basic idea is
+to have as much user-interface policy as possible controlled through
+the Lisp language. All configuration may be performed through a GTK
+interface; sawmill is mostly-GNOME compliant.
 
 %package gnome
 Summary:	GNOME support for sawmill
 Group:		X11/Window Managers
+Group(es):	X11/Administraadores De Ventanas
+Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
 Requires:	%{name} = %{version}
 
@@ -51,6 +57,8 @@ control center applet.
 %package themer
 Summary:	GUI for creating sawmill themes
 Group:		X11/Window Managers
+Group(es):	X11/Administraadores De Ventanas
+Group(fr):	X11/Gestionnaires De Fenêtres
 Group(pl):	X11/Zarz±dcy Okien
 Requires:	%{name} = %{version}
 
@@ -62,6 +70,7 @@ created/edited in a graphical environment.
 %setup -q
 %patch0 -p1
 # %patch1 
+%patch2 
 
 %build
 gettextize --copy --force
@@ -81,10 +90,8 @@ install -d $RPM_BUILD_ROOT%{_datadir}/{gnome/wm-properties,control-center}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf $RPM_BUILD_ROOT%{_infodir}/sawmill* \
+gzip -9nf $RPM_BUILD_ROOT%{_infodir}/sawfish* \
 	README NEWS FAQ TODO
-
-%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -95,25 +102,25 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%files -f %{name}.lang
+%files
 %defattr(644,root,root,755)
 %doc *.gz
-%attr(755,root,root) %{_bindir}/sawmill
-%attr(755,root,root) %{_bindir}/sawmill-client
-%attr(755,root,root) %{_bindir}/sawmill-ui
-%{_datadir}/sawmill
-%dir %{_libexecdir}/sawmill
-%dir %{_libexecdir}/sawmill/%{version}
-%{_libexecdir}/sawmill/%{version}/%{_host}
-%{_infodir}/sawmill*
+%attr(755,root,root) %{_bindir}/sawfish
+%attr(755,root,root) %{_bindir}/sawfish-client
+%attr(755,root,root) %{_bindir}/sawfish-ui
+%{_datadir}/sawfish
+%dir %{_libexecdir}/sawfish
+%dir %{_libexecdir}/sawfish/%{version}
+%{_libexecdir}/sawfish/%{version}/%{_host}
+%{_infodir}/sawfish*
 
 %files gnome
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/sawmill-capplet
-%{_datadir}/control-center/Sawmill
-%{_datadir}/gnome/wm-properties/Sawmill.desktop
+%attr(755,root,root) %{_bindir}/sawfish-capplet
+%{_datadir}/control-center/Sawfish
+%{_datadir}/gnome/wm-properties/Sawfish.desktop
 
 %files themer
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/sawmill-themer
-%{_datadir}/sawmill/%{version}/themer.glade
+%attr(755,root,root) %{_bindir}/sawfish-themer
+%{_datadir}/sawfish/%{version}/themer.glade
