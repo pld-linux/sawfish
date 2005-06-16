@@ -7,7 +7,7 @@ Summary(uk):	÷¦ËÏÎÎÉÊ ÍÅÎÅÄÖÅÒ ÄÌÑ X Window
 Summary(zh_CN):	¾ßÓÐºÜÇ¿µÄÀ©Õ¹ÐÔºÍ¿ÉÅäÖÃÐÔµÄÍ¼ÐÎ´°¿Ú¹ÜÀíÆ÷
 Name:		sawfish
 Version:	1.3
-Release:	4
+Release:	5
 Epoch:		3
 License:	GPL
 Group:		X11/Window Managers
@@ -32,7 +32,8 @@ BuildRequires:	rep-gtk-gnome >= 0.17
 BuildRequires:	rep-gtk-libglade >= 0.17
 BuildRequires:	texinfo
 %define		repexecdir	%(rep-config --execdir || echo "Install_librep-devel_and_rebuild_this_package")
-Requires:	rep-gtk >= 0.16
+Requires:	rep-gtk >= 0.17
+Requires:	rep-gtk-gnome >= 0.17
 Requires:	%{repexecdir}
 Provides:	gnome-wm
 Obsoletes:	sawmill
@@ -89,9 +90,8 @@ sawfish-gnome.
 Summary:	GNOME support for sawmill
 Summary(pl):	Support GNOME'a dla sawmilla
 Group:		X11/Window Managers
-Requires:	%{name} = %{epoch}:%{version}
-Requires:	rep-gtk-gnome >= 0.14-3
-Requires:	rep-gtk-libglade >= 0.14-3
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	rep-gtk-libglade >= 0.17
 
 %description gnome
 Optional GNOME support for sawmill. Includes a wm-entries spec, and a
