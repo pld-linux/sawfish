@@ -1,10 +1,10 @@
 Summary:	A highly configurable and extensible X11 window manager
-Summary(es):	Un administrador de ventanas que se puede configurar y extender para X11
-Summary(pl):	Zarz╠dca okien dla X11 o du©ych mo©liwo╤ciach konfiguracyjnych i skalowalno╤ci
-Summary(pt_BR):	Um gerenciador de janelas configurАvel e extensМvel para o X11
-Summary(ru):	Оконный менеджер для X Window
-Summary(uk):	В╕конний менеджер для X Window
-Summary(zh_CN):	╬ъсп╨эг©╣дю╘у╧пт╨м©иеДжцпт╣дм╪пн╢╟©з╧эюМфВ
+Summary(es.UTF-8):   Un administrador de ventanas que se puede configurar y extender para X11
+Summary(pl.UTF-8):   Zarzд┘dca okien dla X11 o duе╪ych moе╪liwoе⌡ciach konfiguracyjnych i skalowalnoе⌡ci
+Summary(pt_BR.UTF-8):   Um gerenciador de janelas configurц║vel e extensц╜vel para o X11
+Summary(ru.UTF-8):   п·п╨п╬п╫п╫я▀п╧ п╪п╣п╫п╣п╢п╤п╣я─ п╢п╩я▐ X Window
+Summary(uk.UTF-8):   п▓я√п╨п╬п╫п╫п╦п╧ п╪п╣п╫п╣п╢п╤п╣я─ п╢п╩я▐ X Window
+Summary(zh_CN.UTF-8):   Е┘╥Ф°┴Е╬┬Е╪╨Г └Ф┴╘Е╠∙Ф─╖Е▓▄Е▐╞И┘█Г╫╝Ф─╖Г └Е⌡╬Е╫╒Г╙≈Е▐ёГ╝║Г░├Е≥╗
 Name:		sawfish
 Version:	1.3
 Release:	5
@@ -50,44 +50,44 @@ to have as much user-interface policy as possible controlled through
 the Lisp language. All configuration may be performed through a GTK
 interface; sawfish is mostly-GNOME compliant.
 
-%description -l pl
-Zarz╠dca okien o du©ych mo©liwo╤ciach rozszerzania, u©ywaj╠cy
-bazowanego na LISP-ie jЙzyka skryptowego, dziЙki czemu wszystkie
-dodatki do okien s╠ konfigurowalne. OgСln╠ ide╠ jest, aby daФ jak
-najwiЙksz╠ kontrolЙ w rЙce u©ytkownika poprzez graficzny interfejs
-dziЙki wЁa╤nie LISP-owi. Sawfish jest najbardziej zgodny z GNOME-m.
+%description -l pl.UTF-8
+Zarzд┘dca okien o duе╪ych moе╪liwoе⌡ciach rozszerzania, uе╪ywajд┘cy
+bazowanego na LISP-ie jд≥zyka skryptowego, dziд≥ki czemu wszystkie
+dodatki do okien sд┘ konfigurowalne. OgцЁlnд┘ ideд┘ jest, aby daд┤ jak
+najwiд≥kszд┘ kontrolд≥ w rд≥ce uе╪ytkownika poprzez graficzny interfejs
+dziд≥ki wе┌aе⌡nie LISP-owi. Sawfish jest najbardziej zgodny z GNOME-m.
 
-%description -l pt_BR
-O Sawfish И um gerenciador de janelas extensМvel que usa uma linguagem
-de script baseada em Lisp. Todas as decoraГУes de janelas sЦo
-configurАveis e a idИia bАsica e ter a maior parte possМvel das
-polМticas de interface de usuАrio controlada pela linguagem Lisp. A
-configuraГЦo pode ser efetuada escrevendo-se cСdigo Lisp em um arquivo
-.sawfishrc pessoal. O Sawfish provЙ suporte completo para o GNOME.
+%description -l pt_BR.UTF-8
+O Sawfish ц╘ um gerenciador de janelas extensц╜vel que usa uma linguagem
+de script baseada em Lisp. Todas as decoraц╖ц╣es de janelas sцёo
+configurц║veis e a idц╘ia bц║sica e ter a maior parte possц╜vel das
+polц╜ticas de interface de usuц║rio controlada pela linguagem Lisp. A
+configuraц╖цёo pode ser efetuada escrevendo-se cцЁdigo Lisp em um arquivo
+.sawfishrc pessoal. O Sawfish provц╙ suporte completo para o GNOME.
 
-%description -l ru
-Sawfish - это расширяемый оконный менеджер, использующий основанный на
-Lisp язык сценариев. Все оконные декорации можно конфигурировать,
-базовая идея состоит в том, чтобы контролировать через Lisp
-максимально возможный объем поведения интерфейса пользователя.
-Конфигурирование может быть исполнено написанием Lisp кода в
-персональном файле .sawfishrc, или через GTK+ интерфейс. Sawfish в
-основном совместим с GNOME; если хотите использовать его с GNOME,
-необходимо также установить пакет sawfish-gnome.
+%description -l ru.UTF-8
+Sawfish - я█я┌п╬ я─п╟я│я┬п╦я─я▐п╣п╪я▀п╧ п╬п╨п╬п╫п╫я▀п╧ п╪п╣п╫п╣п╢п╤п╣я─, п╦я│п©п╬п╩я▄п╥я┐я▌я┴п╦п╧ п╬я│п╫п╬п╡п╟п╫п╫я▀п╧ п╫п╟
+Lisp я▐п╥я▀п╨ я│я├п╣п╫п╟я─п╦п╣п╡. п▓я│п╣ п╬п╨п╬п╫п╫я▀п╣ п╢п╣п╨п╬я─п╟я├п╦п╦ п╪п╬п╤п╫п╬ п╨п╬п╫я└п╦пЁя┐я─п╦я─п╬п╡п╟я┌я▄,
+п╠п╟п╥п╬п╡п╟я▐ п╦п╢п╣я▐ я│п╬я│я┌п╬п╦я┌ п╡ я┌п╬п╪, я┤я┌п╬п╠я▀ п╨п╬п╫я┌я─п╬п╩п╦я─п╬п╡п╟я┌я▄ я┤п╣я─п╣п╥ Lisp
+п╪п╟п╨я│п╦п╪п╟п╩я▄п╫п╬ п╡п╬п╥п╪п╬п╤п╫я▀п╧ п╬п╠я┼п╣п╪ п©п╬п╡п╣п╢п╣п╫п╦я▐ п╦п╫я┌п╣я─я└п╣п╧я│п╟ п©п╬п╩я▄п╥п╬п╡п╟я┌п╣п╩я▐.
+п п╬п╫я└п╦пЁя┐я─п╦я─п╬п╡п╟п╫п╦п╣ п╪п╬п╤п╣я┌ п╠я▀я┌я▄ п╦я│п©п╬п╩п╫п╣п╫п╬ п╫п╟п©п╦я│п╟п╫п╦п╣п╪ Lisp п╨п╬п╢п╟ п╡
+п©п╣я─я│п╬п╫п╟п╩я▄п╫п╬п╪ я└п╟п╧п╩п╣ .sawfishrc, п╦п╩п╦ я┤п╣я─п╣п╥ GTK+ п╦п╫я┌п╣я─я└п╣п╧я│. Sawfish п╡
+п╬я│п╫п╬п╡п╫п╬п╪ я│п╬п╡п╪п╣я│я┌п╦п╪ я│ GNOME; п╣я│п╩п╦ я┘п╬я┌п╦я┌п╣ п╦я│п©п╬п╩я▄п╥п╬п╡п╟я┌я▄ п╣пЁп╬ я│ GNOME,
+п╫п╣п╬п╠я┘п╬п╢п╦п╪п╬ я┌п╟п╨п╤п╣ я┐я│я┌п╟п╫п╬п╡п╦я┌я▄ п©п╟п╨п╣я┌ sawfish-gnome.
 
-%description -l uk
-Sawfish - це розширюваний в╕конний менеджер, що використову╓ базовану
-на Lisp мову сценар╕╖в. Вс╕ в╕конн╕ декорац╕╖ можна конф╕гурувати,
-базова ╕дея поляга╓ в тому, щоб контролювати через Lisp максимально
-можливий об'╓м повед╕нки ╕нтерфейса користувача. Конф╕гурування може
-бути виконане написанням Lisp коду в персональному файл╕ .sawfishrc,
-або через GTK+ ╕нтерфейс. Sawfish здеб╕льшого сум╕сний з GNOME; якщо
-хочете використовувати його з GNOME, потр╕бно також встановити пакет
+%description -l uk.UTF-8
+Sawfish - я├п╣ я─п╬п╥я┬п╦я─я▌п╡п╟п╫п╦п╧ п╡я√п╨п╬п╫п╫п╦п╧ п╪п╣п╫п╣п╢п╤п╣я─, я┴п╬ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я■ п╠п╟п╥п╬п╡п╟п╫я┐
+п╫п╟ Lisp п╪п╬п╡я┐ я│я├п╣п╫п╟я─я√я≈п╡. п▓я│я√ п╡я√п╨п╬п╫п╫я√ п╢п╣п╨п╬я─п╟я├я√я≈ п╪п╬п╤п╫п╟ п╨п╬п╫я└я√пЁя┐я─я┐п╡п╟я┌п╦,
+п╠п╟п╥п╬п╡п╟ я√п╢п╣я▐ п©п╬п╩я▐пЁп╟я■ п╡ я┌п╬п╪я┐, я┴п╬п╠ п╨п╬п╫я┌я─п╬п╩я▌п╡п╟я┌п╦ я┤п╣я─п╣п╥ Lisp п╪п╟п╨я│п╦п╪п╟п╩я▄п╫п╬
+п╪п╬п╤п╩п╦п╡п╦п╧ п╬п╠'я■п╪ п©п╬п╡п╣п╢я√п╫п╨п╦ я√п╫я┌п╣я─я└п╣п╧я│п╟ п╨п╬я─п╦я│я┌я┐п╡п╟я┤п╟. п п╬п╫я└я√пЁя┐я─я┐п╡п╟п╫п╫я▐ п╪п╬п╤п╣
+п╠я┐я┌п╦ п╡п╦п╨п╬п╫п╟п╫п╣ п╫п╟п©п╦я│п╟п╫п╫я▐п╪ Lisp п╨п╬п╢я┐ п╡ п©п╣я─я│п╬п╫п╟п╩я▄п╫п╬п╪я┐ я└п╟п╧п╩я√ .sawfishrc,
+п╟п╠п╬ я┤п╣я─п╣п╥ GTK+ я√п╫я┌п╣я─я└п╣п╧я│. Sawfish п╥п╢п╣п╠я√п╩я▄я┬п╬пЁп╬ я│я┐п╪я√я│п╫п╦п╧ п╥ GNOME; я▐п╨я┴п╬
+я┘п╬я┤п╣я┌п╣ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐п╡п╟я┌п╦ п╧п╬пЁп╬ п╥ GNOME, п©п╬я┌я─я√п╠п╫п╬ я┌п╟п╨п╬п╤ п╡я│я┌п╟п╫п╬п╡п╦я┌п╦ п©п╟п╨п╣я┌
 sawfish-gnome.
 
 %package gnome
 Summary:	GNOME support for sawmill
-Summary(pl):	Support GNOME'a dla sawmilla
+Summary(pl.UTF-8):   Support GNOME'a dla sawmilla
 Group:		X11/Window Managers
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	rep-gtk-libglade >= 0.17
@@ -96,21 +96,21 @@ Requires:	rep-gtk-libglade >= 0.17
 Optional GNOME support for sawmill. Includes a wm-entries spec, and a
 control center applet.
 
-%description gnome -l pl
+%description gnome -l pl.UTF-8
 Opcjonalne wsparcie GNOME'a dla sawmilla. Zawiera aplet dla
-control-center oraz specyfikacjЙ wm-entries.
+control-center oraz specyfikacjд≥ wm-entries.
 
-%description gnome -l ru
-Пакет sawfish-gnome включает поддержку среды GNOME для оконного
-менеджера sawfish (включая апплет для центра управления GNOME). Если
-вы хотите использовать sawfish вместе с GNOME, вам необходимо
-установить этот пакет.
+%description gnome -l ru.UTF-8
+п÷п╟п╨п╣я┌ sawfish-gnome п╡п╨п╩я▌я┤п╟п╣я┌ п©п╬п╢п╢п╣я─п╤п╨я┐ я│я─п╣п╢я▀ GNOME п╢п╩я▐ п╬п╨п╬п╫п╫п╬пЁп╬
+п╪п╣п╫п╣п╢п╤п╣я─п╟ sawfish (п╡п╨п╩я▌я┤п╟я▐ п╟п©п©п╩п╣я┌ п╢п╩я▐ я├п╣п╫я┌я─п╟ я┐п©я─п╟п╡п╩п╣п╫п╦я▐ GNOME). п∙я│п╩п╦
+п╡я▀ я┘п╬я┌п╦я┌п╣ п╦я│п©п╬п╩я▄п╥п╬п╡п╟я┌я▄ sawfish п╡п╪п╣я│я┌п╣ я│ GNOME, п╡п╟п╪ п╫п╣п╬п╠я┘п╬п╢п╦п╪п╬
+я┐я│я┌п╟п╫п╬п╡п╦я┌я▄ я█я┌п╬я┌ п©п╟п╨п╣я┌.
 
-%description gnome -l uk
-Пакет sawfish-gnome включа╓ п╕дтримку середовища GNOME для в╕конного
-менеджера sawfish (включаючи аплет для центру керування GNOME). Якщо
-ви хочете використовувати sawfish з GNOME, вам потр╕бно встановити цей
-пакет.
+%description gnome -l uk.UTF-8
+п÷п╟п╨п╣я┌ sawfish-gnome п╡п╨п╩я▌я┤п╟я■ п©я√п╢я┌я─п╦п╪п╨я┐ я│п╣я─п╣п╢п╬п╡п╦я┴п╟ GNOME п╢п╩я▐ п╡я√п╨п╬п╫п╫п╬пЁп╬
+п╪п╣п╫п╣п╢п╤п╣я─п╟ sawfish (п╡п╨п╩я▌я┤п╟я▌я┤п╦ п╟п©п╩п╣я┌ п╢п╩я▐ я├п╣п╫я┌я─я┐ п╨п╣я─я┐п╡п╟п╫п╫я▐ GNOME). п╞п╨я┴п╬
+п╡п╦ я┘п╬я┤п╣я┌п╣ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐п╡п╟я┌п╦ sawfish п╥ GNOME, п╡п╟п╪ п©п╬я┌я─я√п╠п╫п╬ п╡я│я┌п╟п╫п╬п╡п╦я┌п╦ я├п╣п╧
+п©п╟п╨п╣я┌.
 
 %prep
 %setup -q
