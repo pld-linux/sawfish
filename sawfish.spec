@@ -1,5 +1,5 @@
 Summary:	A highly configurable and extensible X11 window manager
-Summary(pl):	Window Manad¿er dla X11 o du¿ych mo¿liwo¶ciach konfiguracyjnych i skalowalno¶ci
+Summary(pl.UTF-8):   Window ManadÅ¼er dla X11 o duÅ¼ych moÅ¼liwoÅ›ciach konfiguracyjnych i skalowalnoÅ›ci
 Name:		sawfish
 Version:	2.0
 Release:	2
@@ -42,16 +42,16 @@ to have as much user-interface policy as possible controlled through
 the Lisp language. All configuration may be performed through a GTK
 interface; sawmill is mostly-GNOME compliant.
 
-%description -l pl
-Window manad¿er o du¿ych mo¿liwo¶ciach rozszerzania, u¿ywaj±cy
-bazowanego na LISP-ie jêzyka skryptowego, dziêki czemu wszystkie
-dodatki do okien s± configurowalne. Ogóln± ide± jest, aby daæ jak
-najwiêksz± kontrolê w rêce u¿ytkownika poprzez graficzny interfejs
-dziêki w³a¶nie LISP-owi. Sawmill jest najbardziej zgodny z GNOME-m.
+%description -l pl.UTF-8
+Window manadÅ¼er o duÅ¼ych moÅ¼liwoÅ›ciach rozszerzania, uÅ¼ywajÄ…cy
+bazowanego na LISP-ie jÄ™zyka skryptowego, dziÄ™ki czemu wszystkie
+dodatki do okien sÄ… configurowalne. OgÃ³lnÄ… ideÄ… jest, aby daÄ‡ jak
+najwiÄ™kszÄ… kontrolÄ™ w rÄ™ce uÅ¼ytkownika poprzez graficzny interfejs
+dziÄ™ki wÅ‚aÅ›nie LISP-owi. Sawmill jest najbardziej zgodny z GNOME-m.
 
 %package gnome
 Summary:	GNOME support for sawmill
-Summary(pl):	Support GNOME'a dla sawmilla
+Summary(pl.UTF-8):   Support GNOME'a dla sawmilla
 Group:		X11/Window Managers
 Requires:	%{name} = %{version}
 Requires:	rep-gtk-gnome >= 0.14-3
@@ -61,7 +61,7 @@ Requires:	rep-gtk-libglade >= 0.14-3
 Optional GNOME support for sawmill. Includes a wm-entries spec, and a
 control center applet.
 
-%description gnome -l pl
+%description gnome -l pl.UTF-8
 Opcjonalny support GNOME'a dla sawmilla. Zawiera aplet dla
 control-center oraz wm-entries spec.
 
