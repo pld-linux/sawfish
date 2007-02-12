@@ -1,10 +1,10 @@
 Summary:	A highly configurable and extensible X11 window manager
-Summary(es.UTF-8):   Un administrador de ventanas que se puede configurar y extender para X11
-Summary(pl.UTF-8):   Zarządca okien dla X11 o dużych możliwościach konfiguracyjnych i skalowalności
-Summary(pt_BR.UTF-8):   Um gerenciador de janelas configurável e extensível para o X11
-Summary(ru.UTF-8):   Оконный менеджер для X Window
-Summary(uk.UTF-8):   Віконний менеджер для X Window
-Summary(zh_CN.UTF-8):   具有很强的扩展性和可配置性的图形窗口管理器
+Summary(es.UTF-8):	Un administrador de ventanas que se puede configurar y extender para X11
+Summary(pl.UTF-8):	Zarządca okien dla X11 o dużych możliwościach konfiguracyjnych i skalowalności
+Summary(pt_BR.UTF-8):	Um gerenciador de janelas configurável e extensível para o X11
+Summary(ru.UTF-8):	Оконный менеджер для X Window
+Summary(uk.UTF-8):	Віконний менеджер для X Window
+Summary(zh_CN.UTF-8):	具有很强的扩展性和可配置性的图形窗口管理器
 Name:		sawfish
 Version:	1.3
 Release:	5
@@ -87,7 +87,7 @@ sawfish-gnome.
 
 %package gnome
 Summary:	GNOME support for sawmill
-Summary(pl.UTF-8):   Support GNOME'a dla sawmilla
+Summary(pl.UTF-8):	Support GNOME'a dla sawmilla
 Group:		X11/Window Managers
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	rep-gtk-libglade >= 0.17
