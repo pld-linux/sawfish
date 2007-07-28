@@ -6,17 +6,18 @@ Summary(ru.UTF-8):	Оконный менеджер для X Window
 Summary(uk.UTF-8):	Віконний менеджер для X Window
 Summary(zh_CN.UTF-8):	具有很强的扩展性和可配置性的图形窗口管理器
 Name:		sawfish
-Version:	1.3
-Release:	5
-Epoch:		3
+Version:	1.3.1
+Release:	1
+Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
 #Source0:	http://ftp.gnome.org/pub/gnome/sources/sawfish/2.0/%{name}-%{version}.tar.bz2
 Source0:	http://dl.sourceforge.net/sawmill/%{name}-%{version}.tar.gz
-# Source0-md5:	9e5ce5e76c60acecdb1889c1f173295a
+# Source0-md5:	2ebed60d4fcae075f1f171972c40660a
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-applnk.patch
-URL:		http://sawmill.sourceforge.net/
+%define		repexecdir	%(rep-config --execdir || echo "Install_librep-devel_and_rebuild_this_package")
+URL:		http://sawfish.wikia.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel >= 1:0.2.27
@@ -30,10 +31,10 @@ BuildRequires:	rep-gtk >= 0.17
 BuildRequires:	rep-gtk-gnome >= 0.17
 BuildRequires:	rep-gtk-libglade >= 0.17
 BuildRequires:	texinfo
-%define		repexecdir	%(rep-config --execdir || echo "Install_librep-devel_and_rebuild_this_package")
+BuildRequires:	xorg-proto-xextproto-devel
+Requires:	%{repexecdir}
 Requires:	rep-gtk >= 0.17
 Requires:	rep-gtk-gnome >= 0.17
-Requires:	%{repexecdir}
 Provides:	gnome-wm
 Obsoletes:	sawmill
 Obsoletes:	sawmill-gnome
@@ -126,7 +127,6 @@ mv -f po/{no,nb}.po
 %{__automake} || :
 %configure \
 	--disable-static \
-	--enable-capplet \
 	--enable-themer \
 	--enable-gnome-widgets \
 	--with-readline \
@@ -189,5 +189,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files gnome
 %defattr(644,root,root,755)
-%{_datadir}/control-center-2.0/capplets/*
 %{_wmpropsdir}/Sawfish.desktop
