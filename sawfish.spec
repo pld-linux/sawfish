@@ -7,7 +7,7 @@ Summary(uk.UTF-8):	Віконний менеджер для X Window
 Summary(zh_CN.UTF-8):	具有很强的扩展性和可配置性的图形窗口管理器
 Name:		sawfish
 Version:	1.3.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -39,10 +39,11 @@ Provides:	gnome-wm
 Obsoletes:	sawmill
 Obsoletes:	sawmill-gnome
 Obsoletes:	sawmill-themer
+Conflicts:	filesystem < 3.0-20
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}
-%define		_wmpropsdir	/usr/share/wm-properties
+%define		_wmpropsdir	/usr/share/gnome/wm-properties
 
 %description
 This is an extensible window manager using a LISP-based scripting
