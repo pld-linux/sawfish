@@ -6,17 +6,17 @@ Summary(ru.UTF-8):	Оконный менеджер для X Window
 Summary(uk.UTF-8):	Віконний менеджер для X Window
 Summary(zh_CN.UTF-8):	具有很强的扩展性和可配置性的图形窗口管理器
 Name:		sawfish
-Version:	1.3.1
-Release:	2
+Version:	1.8.1
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
 #Source0:	http://ftp.gnome.org/pub/gnome/sources/sawfish/2.0/%{name}-%{version}.tar.bz2
-Source0:	http://dl.sourceforge.net/sawmill/%{name}-%{version}.tar.gz
-# Source0-md5:	2ebed60d4fcae075f1f171972c40660a
+Source0:	http://download.tuxfamily.org/sawfish/%{name}-%{version}.tar.xz
+# Source0-md5:	51c86ffa9ef7c8cf9d1737f883afae20
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-applnk.patch
-%define		repexecdir	%(rep-config --execdir || echo "Install_librep-devel_and_rebuild_this_package")
+%define		repexecdir	%(pkg-config --variable=repexecdir librep || echo "Install_librep-devel_and_rebuild_this_package")
 URL:		http://sawfish.wikia.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -27,9 +27,8 @@ BuildRequires:	librep-devel >= 0.16
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
 BuildRequires:	readline-devel
-BuildRequires:	rep-gtk >= 0.17
-BuildRequires:	rep-gtk-gnome >= 0.17
-BuildRequires:	rep-gtk-libglade >= 0.17
+BuildRequires:	rep-gtk-devel >= 0.90
+BuildRequires:	sed >= 4.0
 BuildRequires:	texinfo
 BuildRequires:	xorg-proto-xextproto-devel
 Requires:	%{repexecdir}
@@ -116,7 +115,7 @@ control-center oraz specyfikację wm-entries.
 
 %prep
 %setup -q
-%patch0 -p1
+# %patch0 -p1
 
 mv -f po/{no,nb}.po
 
@@ -125,7 +124,6 @@ mv -f po/{no,nb}.po
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
-%{__automake} || :
 %configure \
 	--disable-static \
 	--enable-themer \
