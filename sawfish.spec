@@ -16,7 +16,6 @@ Source0:	http://download.tuxfamily.org/sawfish/%{name}-%{version}.tar.xz
 # Source0-md5:	51c86ffa9ef7c8cf9d1737f883afae20
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-applnk.patch
-%define		repexecdir	%(pkg-config --variable=repexecdir librep || echo "Install_librep-devel_and_rebuild_this_package")
 URL:		http://sawfish.wikia.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -31,9 +30,7 @@ BuildRequires:	rep-gtk-devel >= 0.90
 BuildRequires:	sed >= 4.0
 BuildRequires:	texinfo
 BuildRequires:	xorg-proto-xextproto-devel
-Requires:	%{repexecdir}
 Requires:	rep-gtk >= 0.17
-Requires:	rep-gtk-gnome >= 0.17
 Provides:	gnome-wm
 Obsoletes:	sawmill
 Obsoletes:	sawmill-gnome
@@ -86,12 +83,26 @@ Sawfish - це розширюваний віконний менеджер, що 
 хочете використовувати його з GNOME, потрібно також встановити пакет
 sawfish-gnome.
 
+%package devel
+Summary:	Sawfish development files
+Group:		Development/Libraries
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+
+%description devel
+Sawfish development files.
+
+%package static
+Summary:	Static sawfish library
+Group:		Development/Libraries
+
+%description static
+Static sawfish library.
+
 %package gnome
 Summary:	GNOME support for sawmill
 Summary(pl.UTF-8):	Support GNOME'a dla sawmilla
 Group:		X11/Window Managers
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	rep-gtk-libglade >= 0.17
 
 %description gnome
 Optional GNOME support for sawmill. Includes a wm-entries spec, and a
@@ -113,6 +124,14 @@ control-center oraz specyfikację wm-entries.
 ви хочете використовувати sawfish з GNOME, вам потрібно встановити цей
 пакет.
 
+%package kde
+Summary:	KDE support for sawmill
+Group:		X11/Window Managers
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+
+%description kde
+Optional KDE support for sawmill.
+
 %prep
 %setup -q
 # %patch0 -p1
@@ -120,7 +139,7 @@ control-center oraz specyfikację wm-entries.
 mv -f po/{no,nb}.po
 
 %build
-%{__gettextize}
+%{__autoheader}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -144,7 +163,6 @@ install -d $RPM_BUILD_ROOT{%{_datadir}/xsessions,%{_wmpropsdir}}
 	G_MENU_DIR=%{_applnkdir}/Settings/GNOME \
 	host_type=%{_host}
 
-install Sawfish.desktop $RPM_BUILD_ROOT%{_wmpropsdir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/%{name}.desktop
 
 %find_lang %{name}
@@ -164,28 +182,41 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/sawfish
 %{_datadir}/xsessions/%{name}.desktop
-%{_pixmapsdir}/*
+%{_iconsdir}/hicolor/*/apps/sawfish-config.png
 
-%dir %{_libexecdir}/sawfish
-%dir %{_libexecdir}/sawfish/%{version}
-%dir %{_libexecdir}/sawfish/%{version}/%{_host}
-%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/*.so
-%{_libexecdir}/sawfish/%{version}/%{_host}/*.la
-%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/gtk-style
-%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish-menu
-%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish-about
-%dir %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish
-%dir %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish/wm
-%dir %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish/wm/util
-%attr(755,root,root) %{_libexecdir}/sawfish/%{version}/%{_host}/sawfish/wm/util/*.so
-%{_libexecdir}/sawfish/%{version}/%{_host}/sawfish/wm/util/*.la
-%{_libexecdir}/sawfish/%{version}/%{_host}/DOC
-
-%dir %{repexecdir}/sawfish
-%attr(755,root,root) %{repexecdir}/sawfish/*.so
-%{repexecdir}/sawfish/*.la
+%dir %{_libexecdir}/rep/%{_host}/%{name}
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/%{name}/*.so
+%{_libexecdir}/rep/%{_host}/%{name}/*.la
+%attr(755,root,root) %{_libexecdir}/sawfish/gtk-style
+%attr(755,root,root) %{_libexecdir}/sawfish/sawfish-menu
+%attr(755,root,root) %{_libexecdir}/sawfish/sawfish-about
+%dir %{_libexecdir}/sawfish/sawfish
+%dir %{_libexecdir}/sawfish/sawfish/wm
+%dir %{_libexecdir}/sawfish/sawfish/wm/util
+%attr(755,root,root) %{_libexecdir}/sawfish/sawfish/wm/util/*.so
+%{_libexecdir}/sawfish/sawfish/wm/util/*.la
+%{_libexecdir}/sawfish/*.so
+%{_libexecdir}/sawfish/*.la
+%{_libexecdir}/sawfish/DOC
+%{_desktopdir}/%{name}.desktop
 %{_infodir}/sawfish*
+%{_mandir}/man1/sawfish*.1*
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/sawfish
+%{_pkgconfigdir}/sawfish.pc
+
+%files static
+%defattr(644,root,root,755)
+%{_libexecdir}/rep/%{_host}/%{name}/*.a
+%{_libexecdir}/%{name}/*.a
+%{_libexecdir}/%{name}/%{name}/wm/util/*.a
 
 %files gnome
 %defattr(644,root,root,755)
-%{_wmpropsdir}/Sawfish.desktop
+%{_wmpropsdir}/sawfish-wm.desktop
+
+%files kde
+%defattr(644,root,root,755)
+%{_datadir}/apps/ksmserver/windowmanagers/sawfish.desktop
