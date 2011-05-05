@@ -190,6 +190,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libexecdir}/sawfish/gtk-style
 %attr(755,root,root) %{_libexecdir}/sawfish/sawfish-menu
 %attr(755,root,root) %{_libexecdir}/sawfish/sawfish-about
+%dir %{_libexecdir}/sawfish
 %dir %{_libexecdir}/sawfish/sawfish
 %dir %{_libexecdir}/sawfish/sawfish/wm
 %dir %{_libexecdir}/sawfish/sawfish/wm/util
