@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_with	gnome2		# build with support for GNOME2 wm-properties
+#
 Summary:	A highly configurable and extensible X11 window manager
 Summary(es.UTF-8):	Un administrador de ventanas que se puede configurar y extender para X11
 Summary(pl.UTF-8):	Zarządca okien dla X11 o dużych możliwościach konfiguracyjnych i skalowalności
@@ -7,7 +11,7 @@ Summary(uk.UTF-8):	Віконний менеджер для X Window
 Summary(zh_CN.UTF-8):	具有很强的扩展性和可配置性的图形窗口管理器
 Name:		sawfish
 Version:	1.8.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Window Managers
@@ -214,9 +218,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libexecdir}/%{name}/*.a
 %{_libexecdir}/%{name}/%{name}/wm/util/*.a
 
+%if %{with gnome2}
 %files gnome
 %defattr(644,root,root,755)
 %{_wmpropsdir}/sawfish-wm.desktop
+%endif
 
 %files kde
 %defattr(644,root,root,755)
