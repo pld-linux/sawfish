@@ -138,7 +138,7 @@ Optional KDE support for sawmill.
 
 %prep
 %setup -q
-# %patch0 -p1
+# %%patch0 -p1
 
 mv -f po/{no,nb}.po
 
